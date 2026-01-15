@@ -5,59 +5,159 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DarkBot</title>
     <style>
-        main{
-            display: grid;
-            border:2px solid black;
-            grid-template-columns: 6fr 4fr;
+        *{
+            border: 1px solid crimson;
         }
-        section{
+        main{
+            display: flex;
+            border:2px solid black;
+            height: 97vh;
+            width: 98vw;
+        }
+        .sidebar{
             border: 1px solid gray;
-            margin: 5px;
+            width: 10%;
+        }
+        #hud{
+            display: flex;
+            border: 1px solid gray;
+            width: 30%;
+        }
+        #grid-area{
+            display: flex;
+            border: 1px solid gray;
+            width: 70%;
             padding: 5px;
+            justify-content: center;
         }
         #grid{
-            display: grid;
-            grid-template-columns: repeat(5, 1fr);
-            grid-template-rows: repeat(5, 1fr);
+            border: 1px solid gray;
+            display: grid ;
+            grid-template-columns: repeat(10, 1fr);
+            grid-template-rows: repeat(10, 1fr);
+            height: 100%;
+
         }
         .grid-square{
-            border: 1px solid cyan;
+            display: flex;
+            border: 1px solid black;
+            aspect-ratio: 1;
+            
         }
     </style>
 </head>
 <body>
     <main>
-        <section id="grid">
-            <div class="grid-square">0</div>
-            <div class="grid-square">0</div>
-            <div class="grid-square">0</div>
-            <div class="grid-square">0</div>
-            <div class="grid-square">0</div>
-            <div class="grid-square">0</div>
-            <div class="grid-square">0</div>
-            <div class="grid-square">0</div>
-            <div class="grid-square">0</div>
-            <div class="grid-square">0</div>
-            <div class="grid-square">0</div>
-            <div class="grid-square">0</div>
-            <div class="grid-square">0</div>
-            <div class="grid-square">0</div>
-            <div class="grid-square">0</div>
-            <div class="grid-square">0</div>
-            <div class="grid-square">0</div>
-            <div class="grid-square">0</div>
-            <div class="grid-square">0</div>
-            <div class="grid-square">0</div>
-            <div class="grid-square">0</div>
-            <div class="grid-square">0</div>
-            <div class="grid-square">0</div>
-            <div class="grid-square">0</div>
-            <div class="grid-square">0</div>
-
-        </section>
-        <section id="hud">
+        
+        <div id="grid-area">
+            <div id="grid">
+                <div class="grid-square"> </div>
+                <div class="grid-square"> </div>
+                <div class="grid-square"> </div>
+                <div class="grid-square"> </div>
+                <div class="grid-square"> </div>
+                <div class="grid-square"> </div>
+                <div class="grid-square"> </div>
+                <div class="grid-square"> </div>
+                <div class="grid-square"> </div>
+                <div class="grid-square"> </div>
+                <div class="grid-square"> </div>
+                <div class="grid-square"> </div>
+                <div class="grid-square"> </div>
+                <div class="grid-square"> </div>
+                <div class="grid-square"> </div>
+                <div class="grid-square"> </div>
+                <div class="grid-square"> </div>
+                <div class="grid-square"> </div>
+                <div class="grid-square"> </div>
+                <div class="grid-square"> </div>
+                <div class="grid-square"> </div>
+                <div class="grid-square"> </div>
+                <div class="grid-square"> </div>
+                <div class="grid-square"> </div>
+                <div class="grid-square"> </div>
+                <div class="grid-square"> </div>
+                <div class="grid-square"> </div>
+                <div class="grid-square"> </div>
+                <div class="grid-square"> </div>
+                <div class="grid-square"> </div>
+                <div class="grid-square"> </div>
+                <div class="grid-square"> </div>
+                <div class="grid-square"> </div>
+                <div class="grid-square"> </div>
+                <div class="grid-square"> </div>
+                <div class="grid-square"> </div>
+                <div class="grid-square"> </div>
+                <div class="grid-square"> </div>
+                <div class="grid-square"> </div>
+                <div class="grid-square"> </div>
+                <div class="grid-square"> </div>
+                <div class="grid-square"> </div>
+                <div class="grid-square"> </div>
+                <div class="grid-square"> </div>
+                <div class="grid-square"> </div>
+                <div class="grid-square"> </div>
+                <div class="grid-square"> </div>
+                <div class="grid-square"> </div>
+                <div class="grid-square"> </div>
+                <div class="grid-square"> </div>
+                <div class="grid-square"> </div>
+                <div class="grid-square"> </div>
+                <div class="grid-square"> </div>
+                <div class="grid-square"> </div>
+                <div class="grid-square"> </div>
+                <div class="grid-square"> </div>
+                <div class="grid-square"> </div>
+                <div class="grid-square"> </div>
+                <div class="grid-square"> </div>
+                <div class="grid-square"> </div>
+                <div class="grid-square"> </div>
+                <div class="grid-square"> </div>
+                <div class="grid-square"> </div>
+                <div class="grid-square"> </div>
+                <div class="grid-square"> </div>
+                <div class="grid-square"> </div>
+                <div class="grid-square"> </div>
+                <div class="grid-square"> </div>
+                <div class="grid-square"> </div>
+                <div class="grid-square"> </div>
+                <div class="grid-square"> </div>
+                <div class="grid-square"> </div>
+                <div class="grid-square"> </div>
+                <div class="grid-square"> </div>
+                <div class="grid-square"> </div>
+                <div class="grid-square"> </div>
+                <div class="grid-square"> </div>
+                <div class="grid-square"> </div>
+                <div class="grid-square"> </div>
+                <div class="grid-square"> </div>
+                <div class="grid-square"> </div>
+                <div class="grid-square"> </div>
+                <div class="grid-square"> </div>
+                <div class="grid-square"> </div>
+                <div class="grid-square"> </div>
+                <div class="grid-square"> </div>
+                <div class="grid-square"> </div>
+                <div class="grid-square"> </div>
+                <div class="grid-square"> </div>
+                <div class="grid-square"> </div>
+                <div class="grid-square"> </div>
+                <div class="grid-square"> </div>
+                <div class="grid-square"> </div>
+                <div class="grid-square"> </div>
+                <div class="grid-square"> </div>
+                <div class="grid-square"> </div>
+                <div class="grid-square"> </div>
+                <div class="grid-square"> </div>
+                <div class="grid-square"> </div>
+                <div class="grid-square"> </div>
+            </div>
+        </div>
+        
+        
+        <div id="hud">
             <p>hud</p>
-        </section>
+        </div>
     </main>
 </body>
 </html>
