@@ -14,28 +14,41 @@
             height: 97vh;
             width: 98vw;
         }
-        .sidebar{
-            border: 1px solid gray;
-            width: 10%;
-        }
         #hud{
             display: flex;
+            flex-direction: column;
             border: 1px solid gray;
-            width: 30%;
+            width: 35%;
+            justify-content: center;
+            align-items: center;
+            padding-top: 1%;
+            padding-bottom: 1%;
+        }
+        .funcao{
+            border: 1px solid black;
+            width: 80%;
+            height: 30%;
+            margin: 1%;
+        }
+        #fmain{
+            height: 40%;
         }
         #grid-area{
             display: flex;
+            flex-direction: column;
             border: 1px solid gray;
-            width: 70%;
-            padding: 5px;
+            width: 65%;
             justify-content: center;
+            align-items: center;
         }
         #grid{
             border: 1px solid gray;
             display: grid ;
             grid-template-columns: repeat(10, 1fr);
-            grid-template-rows: repeat(10, 1fr);
+            grid-template-rows: repeat(8, 1fr);
             height: 100%;
+            aspect-ratio: 1;
+            margin: 1%;
 
         }
         .grid-square{
@@ -44,6 +57,20 @@
             aspect-ratio: 1;
             
         }
+        #button-area{
+            display: flex;
+            width: 60%;
+            height: 15%;
+            justify-content:space-around;
+            align-items: center;
+        }
+        .button{
+            border: 2px solid black;
+            border-radius: 5px;
+            width: 10%;
+            aspect-ratio: 1/1;
+        }
+
     </style>
 </head>
 <body>
@@ -131,32 +158,31 @@
                 <div class="grid-square"> </div>
                 <div class="grid-square"> </div>
                 <div class="grid-square"> </div>
-                <div class="grid-square"> </div>
-                <div class="grid-square"> </div>
-                <div class="grid-square"> </div>
-                <div class="grid-square"> </div>
-                <div class="grid-square"> </div>
-                <div class="grid-square"> </div>
-                <div class="grid-square"> </div>
-                <div class="grid-square"> </div>
-                <div class="grid-square"> </div>
-                <div class="grid-square"> </div>
-                <div class="grid-square"> </div>
-                <div class="grid-square"> </div>
-                <div class="grid-square"> </div>
-                <div class="grid-square"> </div>
-                <div class="grid-square"> </div>
-                <div class="grid-square"> </div>
-                <div class="grid-square"> </div>
-                <div class="grid-square"> </div>
-                <div class="grid-square"> </div>
-                <div class="grid-square"> </div>
+            </div>
+            <div id="button-area">
+                <div class="button"></div>
+                <div class="button"></div>
+                <div class="button"></div>
+                <div class="button"></div>
+                <div class="button"></div>
+                <div class="button"></div>
+                <div class="button"></div>
             </div>
         </div>
         
         
+        
         <div id="hud">
-            <p>hud</p>
+            <div class = funcao id="fmain">
+                <div class = funcao_titulo>Main</div>
+            </div>
+            <div class = funcao id="f1">
+                <div class = funcao_titulo>Função P1</div>
+            </div>
+            <div class = funcao id="f2">
+                <div class = funcao_titulo>Função P2</div>
+            </div>
+            
         </div>
     </main>
 </body>
