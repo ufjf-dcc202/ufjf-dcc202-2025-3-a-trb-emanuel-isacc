@@ -36,10 +36,11 @@ main{
 }
 #grid{
     border: 1px solid gray;
-    display: grid ;
+    display: grid;
     grid-template-columns: repeat(10, 1fr);
     grid-template-rows: repeat(8, 1fr);
-    height: 100%;
+    width: 60%;
+    justify-content: center;
     aspect-ratio: 1;
     margin: 1%;
 
@@ -47,8 +48,7 @@ main{
 .grid-square{
     display: flex;
     border: 1px solid black;
-    aspect-ratio: 1;
-    
+    aspect-ratio: 1;    
 }
 #button-area{
     display: flex;
