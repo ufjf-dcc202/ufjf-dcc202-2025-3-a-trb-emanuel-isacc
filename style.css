@@ -39,9 +39,8 @@ main{
     display: grid;
     grid-template-columns: repeat(10, 1fr);
     grid-template-rows: repeat(8, 1fr);
-    width: 60%;
+    height: 80%;
     justify-content: center;
-    aspect-ratio: 1;
     margin: 1%;
 
 }
