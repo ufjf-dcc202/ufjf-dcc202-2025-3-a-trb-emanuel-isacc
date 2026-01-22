@@ -111,13 +111,38 @@
             </div>
             <div id="function-area">
                 <div class = "funcao" id="fmain">
-                    <div class = "funcao_titulo">Main</div>
+                    <div class="comando-main"></div>
+                    <div class="comando-main"></div>
+                    <div class="comando-main"></div>
+                    <div class="comando-main"></div>
+                    <div class="comando-main"></div>
+                    <div class="comando-main"></div>
+                    <div class="comando-main"></div>
+                    <div class="comando-main"></div>
+                    <div class="comando-main"></div>
+                    <div class="comando-main"></div>
+                    <div class="comando-main"></div>
+                    <div class="comando-main"></div>
                 </div>
                 <div class = "funcao" id="f1">
-                    <div class = "funcao_titulo">Função P1</div>
+                    <div class="comando-f1"></div>
+                    <div class="comando-f1"></div>
+                    <div class="comando-f1"></div>
+                    <div class="comando-f1"></div>
+                    <div class="comando-f1"></div>
+                    <div class="comando-f1"></div>
+                    <div class="comando-f1"></div>
+                    <div class="comando-f1"></div>
                 </div>
                 <div class = "funcao" id="f2">
-                    <div class = "funcao_titulo">Função P2</div>
+                    <div class="comando-f2"></div>
+                    <div class="comando-f2"></div>
+                    <div class="comando-f2"></div>
+                    <div class="comando-f2"></div>
+                    <div class="comando-f2"></div>
+                    <div class="comando-f2"></div>
+                    <div class="comando-f2"></div>
+                    <div class="comando-f2"></div>
                 </div>
             </div>
 
@@ -171,29 +196,25 @@
                     andarBoneco();
                 }
             }
-             function verDirecao(){
-                direcao = direcao%4;
+
+            function verDirecao(){
+                const boneco = document.getElementById("boneco");
 
                 if(direcao == 0){
                     boneco.style.backgroundImage = "url('assets/placeholder/cima.png')";
-                    
                 }
                 if(direcao == 1){
                     boneco.style.backgroundImage = "url('assets/placeholder/direita.png')";
-                   
                 }
                 if(direcao == 2){
                     boneco.style.backgroundImage = "url('assets/placeholder/baixo.png')";
-                    
                 }
                 if(direcao == 3){
                     boneco.style.backgroundImage = "url('assets/placeholder/esquerda.png')";
-                    
                 }
             }
 
             function andarDirecao(){
-                direcao = direcao%4;
 
                 if(direcao == 0){
                     andarCima();

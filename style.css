@@ -23,13 +23,37 @@ main{
     align-items: center;
 }
 .funcao{
+    display: grid;
     border: 1px solid black;
     width: 98%;
     height: 27%;
 }
 #fmain{
     height: 40%;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(3, 1fr);
 }
+#f1{
+    height: 40%;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+}
+#f2{
+    height: 40%;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+}
+
+.comando-main, .comando-f1, .comando-f2{
+    border: 1px solid black;
+}
+
+
+
+
+
+
+
 #grid-area{
     display: flex;
     flex-direction: column;
@@ -75,7 +99,6 @@ main{
 }
 .button{
     display: flex;
-    
     border: 2px solid black;
     border-radius: 30%;
     height: 10%;
