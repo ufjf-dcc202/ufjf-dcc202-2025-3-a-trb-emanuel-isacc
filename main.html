@@ -100,9 +100,9 @@
         
         <div id="hud">
             <div id="button-area">
-                <button class="button" id="andar" onclick="SalvareColocar(andarDirecao)"></button>
-                <button class="button" id="direita" onclick="salvarAcao(virarDireita)"></button>
-                <button class="button" id="esquerda"onclick="salvarAcao(virarEsquerda)"></button>
+                <button class="button" id="andar" onclick="SalvareColocar(andarDirecao, 1)"></button>
+                <button class="button" id="direita" onclick="SalvareColocar(virarDireita, 2)"></button>
+                <button class="button" id="esquerda"onclick="SalvareColocar(virarEsquerda, 3)"></button>
                 <div class="button"></div>
                 <div class="button"></div>
                 <div class="button"></div>
@@ -247,10 +247,24 @@
                 andarBoneco();
             }
 
-            function colocaImagem(){
+            function colocaImagem(qual){
                 const grid_mae = document.querySelectorAll(".comando-main");
-                grid_mae[filadamain.length-1].style.backgroundImage = "url('assets/botoes/frente.jpeg')"
-                
+                 const index = filadamain.length - 1;
+                            
+                 if (index >= 0 && index < grid_mae.length) {
+                    if(qual == 1){
+                     grid_mae[index].style.backgroundImage = "url('assets/botoes/frente.jpeg')";
+                    }
+                    else if(qual == 2){
+                     grid_mae[index].style.backgroundImage = "url('assets/botoes/direita.jpeg')";
+                    }
+                    else if(qual == 3){
+                     grid_mae[index].style.backgroundImage = "url('assets/botoes/esquerda.jpeg')";
+                    }
+
+                 } else {
+        console.warn("Índice inválido:", index);
+                 }
             }
 
 
@@ -272,9 +286,9 @@
                 filadamain = [];
             }
 
-            function SalvareColocar(funcao){
+            function SalvareColocar(funcao, qual){
                 salvarAcao(funcao);
-                colocaImagem();
+                colocaImagem(qual);
             }
         </script>
     </main>
