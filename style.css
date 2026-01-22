@@ -26,8 +26,9 @@ main{
 .funcao{
     display: grid;
     border: 1px solid black;
+    width: 25vw;
     place-items: center;
-    box-sizing: border-box;
+    box-sizing:content-box;
     margin: 1% 0 1% 0;
 }
 #fmain{
@@ -44,9 +45,11 @@ main{
 }
 
 .comando-main, .comando-f1, .comando-f2{
-    border: 1px solid black;
     width: 6vw;
     aspect-ratio: 1;
+    background-size:contain;
+    border-radius: 25%;
+    margin: 1%;
 }
 
 
