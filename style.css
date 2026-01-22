@@ -11,14 +11,21 @@ main{
     border: 1px solid gray;
     width:50%;
     height: 100%;
-    justify-content: center;
+    align-items: center;
+}
+#function-area{
+    display: flex;
+    flex-direction: column;
+    border: 1px solid orange;
+    height: 100%;
+    width: 100%;
+    justify-content: space-around;
     align-items: center;
 }
 .funcao{
     border: 1px solid black;
-    width: 80%;
-    height: 30%;
-    margin: 1%;
+    width: 98%;
+    height: 27%;
 }
 #fmain{
     height: 40%;
@@ -57,8 +64,8 @@ main{
     border: 1px solid rebeccapurple;
     display: flex;
     flex-direction: column;
-    width: 15%;
-    height: 50%;
+    height: 100%;
+    width: fit-content;
     justify-content:space-around;
     align-items: center;
 }
@@ -67,9 +74,4 @@ main{
     border-radius: 5px;
     height: 10%;
     aspect-ratio: 1/1;
-}
-#function-area{
-    border: 1px solid orange;
-    height: 100%;
-    width: 85%;
 }
