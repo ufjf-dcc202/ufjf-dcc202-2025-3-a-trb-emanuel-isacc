@@ -9,43 +9,44 @@ main{
     display: flex;
     flex-direction: row;
     border: 1px solid gray;
-    width:50%;
     height: 100%;
+    width: 40%;
     align-items: center;
+    justify-content: space-evenly;
 }
 #function-area{
     display: flex;
     flex-direction: column;
     border: 1px solid orange;
     height: 100%;
-    width: 100%;
     justify-content: space-around;
     align-items: center;
+    overflow: scroll;
 }
 .funcao{
     display: grid;
     border: 1px solid black;
-    width: 98%;
-    height: 27%;
+    place-items: center;
+    box-sizing: border-box;
+    margin: 1% 0 1% 0;
 }
 #fmain{
-    height: 40%;
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: repeat(3, 1fr);
 }
 #f1{
-    height: 40%;
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: repeat(2, 1fr);
 }
 #f2{
-    height: 40%;
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: repeat(2, 1fr);
 }
 
 .comando-main, .comando-f1, .comando-f2{
     border: 1px solid black;
+    width: 6vw;
+    aspect-ratio: 1;
 }
 
 
@@ -58,7 +59,7 @@ main{
     display: flex;
     flex-direction: column;
     border: 1px solid cyan;
-    width: 50%;
+    width: 60%;
     justify-content: center;
     align-items: center;
     overflow:hidden;
@@ -94,14 +95,14 @@ main{
     flex-direction: column;
     height: 100%;
     width: fit-content;
-    justify-content:space-around;
+    justify-content: space-around;
     align-items: center;
 }
 .button{
     display: flex;
     border: 2px solid black;
     border-radius: 30%;
-    height: 10%;
+    height: 5vw;
     aspect-ratio: 1/1;
     background-size:cover;
 }
