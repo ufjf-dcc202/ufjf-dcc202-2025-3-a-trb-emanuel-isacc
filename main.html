@@ -11,7 +11,11 @@
         
         <div id="grid-area">
             <div id="grid">
-                <div class="grid-square"> <p>o</p></div>
+                <div class="grid-square"> 
+                    <div id="boneco">
+                       o
+                    </div>
+                </div>
                 <div class="grid-square"> </div>
                 <div class="grid-square"> </div>
                 <div class="grid-square"> </div>
@@ -133,7 +137,7 @@
                 x : 3,
                 y : 2
             };
-            direcao = 0;
+            direcao = 2;
             filadamain = [];
 
 
@@ -167,6 +171,23 @@
                 if(posicao.x > 0){
                     posicao.x--;
                     andarBoneco();
+                }
+            }
+            
+            function andarDirecao(){
+                direcao = direcao%4;
+
+                if(direcao == 0){
+                    andarCima();
+                }
+                if(direcao == 1 || direcao == -3){
+                    andarDireita();
+                }
+                if(direcao == 2 || direcao == -2){
+                    andarBaixo();
+                }
+                if(direcao == 3 || direcao == -1){
+                    andarEsquerda();
                 }
             }
 
