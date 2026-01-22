@@ -12,9 +12,7 @@
         <div id="grid-area">
             <div id="grid">
                 <div class="grid-square"> 
-                    <div id="boneco">
-                       o
-                    </div>
+                    <div id="boneco"> </div>
                 </div>
                 <div class="grid-square"> </div>
                 <div class="grid-square"> </div>
@@ -137,7 +135,7 @@
                 x : 3,
                 y : 2
             };
-            direcao = 2;
+            direcao = 0;
             filadamain = [];
 
 
@@ -180,15 +178,15 @@
                     boneco.style.backgroundImage = "url('assets/placeholder/cima.png')";
                     
                 }
-                if(direcao == 1 || direcao == -3){
+                if(direcao == 1){
                     boneco.style.backgroundImage = "url('assets/placeholder/direita.png')";
                    
                 }
-                if(direcao == 2 || direcao == -2){
-                    boneco.style.backgroundImage = "url(='assets/placeholder/baixo.png')";
+                if(direcao == 2){
+                    boneco.style.backgroundImage = "url('assets/placeholder/baixo.png')";
                     
                 }
-                if(direcao == 3 || direcao == -1){
+                if(direcao == 3){
                     boneco.style.backgroundImage = "url('assets/placeholder/esquerda.png')";
                     
                 }
@@ -200,13 +198,13 @@
                 if(direcao == 0){
                     andarCima();
                 }
-                if(direcao == 1 || direcao == -3){
+                if(direcao == 1){
                     andarDireita();
                 }
-                if(direcao == 2 || direcao == -2){
+                if(direcao == 2){
                     andarBaixo();
                 }
-                if(direcao == 3 || direcao == -1){
+                if(direcao == 3){
                     andarEsquerda();
                 }
             }
@@ -214,9 +212,12 @@
                function virarDireita(){
                     direcao++;
                     verDirecao();
+                    direcao = direcao%4;
                 }
                 function virarEsquerda(){
                     direcao--;
+                    direcao = direcao%4;
+                    if(direcao < 0) direcao +=4;
                     verDirecao();
                 }   
 
