@@ -1,17 +1,14 @@
-*{
-    border: 1px solid crimson;
-}
 main{
     display: flex;
-    border:2px solid black;
+    border:2px solid salmon;
     height: 97vh;
     width: 98vw;
 }
 #hud{
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     border: 1px solid gray;
-    width: 35%;
+    width:50%;
     justify-content: center;
     align-items: center;
     padding-top: 1%;
@@ -29,17 +26,17 @@ main{
 #grid-area{
     display: flex;
     flex-direction: column;
-    border: 1px solid gray;
-    width: 65%;
+    border: 1px solid cyan;
+    width: 50%;
+    aspect-ratio: 1/1;
     justify-content: center;
     align-items: center;
 }
 #grid{
-    border: 1px solid gray;
+    border: 1px solid red;
     display: grid;
     grid-template-columns: repeat(10, 1fr);
     grid-template-rows: repeat(8, 1fr);
-    height: 80%;
     justify-content: center;
     margin: 1%;
 
@@ -50,15 +47,22 @@ main{
     aspect-ratio: 1;    
 }
 #button-area{
+    border: 1px solid rebeccapurple;
     display: flex;
-    width: 60%;
-    height: 15%;
+    flex-direction: column;
+    width: 15%;
+    height: 50%;
     justify-content:space-around;
     align-items: center;
 }
 .button{
     border: 2px solid black;
     border-radius: 5px;
-    width: 10%;
+    height: 10%;
     aspect-ratio: 1/1;
+}
+#function-area{
+    border: 1px solid orange;
+    height: 100%;
+    width: 85%;
 }
