@@ -3,16 +3,16 @@ main{
     border:2px solid salmon;
     height: 97vh;
     width: 98vw;
+
 }
 #hud{
     display: flex;
     flex-direction: row;
     border: 1px solid gray;
     width:50%;
+    height: 100%;
     justify-content: center;
     align-items: center;
-    padding-top: 1%;
-    padding-bottom: 1%;
 }
 .funcao{
     border: 1px solid black;
@@ -28,23 +28,30 @@ main{
     flex-direction: column;
     border: 1px solid cyan;
     width: 50%;
-    aspect-ratio: 1/1;
     justify-content: center;
     align-items: center;
+    overflow:hidden;
+    padding: 2%;
 }
 #grid{
     border: 1px solid red;
     display: grid;
-    grid-template-columns: repeat(10, 1fr);
-    grid-template-rows: repeat(8, 1fr);
+    grid-template-columns: repeat(10, 10%);
+    grid-template-rows: repeat(8, 12.5%);
     justify-content: center;
-    margin: 1%;
+    background-image: url('./assets/placeholder_background.png');
+    aspect-ratio: 10/8;
+    width: 90%;
+    height: auto;
+
 
 }
 .grid-square{
     display: flex;
     border: 1px solid black;
-    aspect-ratio: 1;    
+    aspect-ratio: 1;
+    min-width: 0;
+    min-height: 0;
 }
 #button-area{
     border: 1px solid rebeccapurple;
