@@ -105,7 +105,7 @@
                 <div class="button"></div>
                 <div class="button"></div>
                 <div class="button"></div>
-                <div class="button"></div>
+                <button class="button" onclick="executarAcao()">Go</button>
             </div>
             <div id="function-area">
                 <div class = "funcao" id="fmain">
@@ -168,6 +168,18 @@
                     posicao.x--;
                     andarBoneco();
                 }
+            }
+
+
+
+            function salvarAcao (funcao){
+                filadamain.push(funcao);
+                console.log("Ação salva:", funcao.name);
+            }
+            function executarAcao(){
+                
+                filadamain.forEach(funcao => funcao());
+                filadamain = [];
             }
         </script>
     </main>
