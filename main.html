@@ -122,13 +122,28 @@
         </div>
         
         
-        <script>
-            const elemento = document.getElementById("grid");
+       
+             <script>
+            const area_grid = document.querySelectorAll(".grid-square");
+            const coluna = 10;
+            const linha = 8;
 
-            const largura = elemento.offsetWidth;
-            const altura = elemento.offsetHeight;
 
-            console.log(largura, altura);
+            posicao = {
+                x : 3,
+                y : 2
+            };
+            direcao = 0;
+            filadamain = [];
+
+
+            function andarBoneco(){
+            const pos_atual = posicao.y * coluna + posicao.x;
+                if(posicao.y < linha && posicao.x < coluna ){
+                const boneco = document.getElementById("boneco");
+                    area_grid[pos_atual].appendChild(boneco);
+                }
+            }
         </script>
     </main>
 </body>
