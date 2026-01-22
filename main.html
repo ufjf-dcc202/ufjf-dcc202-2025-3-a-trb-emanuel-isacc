@@ -100,7 +100,7 @@
         
         <div id="hud">
             <div id="button-area">
-                <button class="button" id="andar" onclick="salvarAcao(andarDirecao)"></button>
+                <button class="button" id="andar" onclick="SalvareColocar(andarDirecao)"></button>
                 <button class="button" id="direita" onclick="salvarAcao(virarDireita)"></button>
                 <button class="button" id="esquerda"onclick="salvarAcao(virarEsquerda)"></button>
                 <div class="button"></div>
@@ -243,15 +243,22 @@
                     verDirecao();
                 }   
 
-            window.onload = () => {
+            window.onload = () => { 
                 andarBoneco();
-            };
+            }
+
+            function colocaImagem(){
+                const grid_mae = document.querySelectorAll(".comando-main");
+                grid_mae[filadamain.length-1].style.backgroundImage = "url('assets/botoes/frente.jpeg')"
+                
+            }
 
 
             function salvarAcao (funcao){
                 if(filadamain.length >= 12){
                     alert("Limite de 12 ações atingido manin");
                     return;
+                    
                 }
 
                 filadamain.push(funcao);
@@ -263,6 +270,11 @@
                 
                 filadamain.forEach(funcao => funcao());
                 filadamain = [];
+            }
+
+            function SalvareColocar(funcao){
+                salvarAcao(funcao);
+                colocaImagem();
             }
         </script>
     </main>
