@@ -98,7 +98,7 @@
         
         <div id="hud">
             <div id="button-area">
-                <div class="button"></div>
+                <button class="button" onclick="salvarAcao(andarDirecao)">↑</button>
                 <div class="button"></div>
                 <div class="button"></div>
                 <div class="button"></div>
@@ -142,6 +142,31 @@
                 if(posicao.y < linha && posicao.x < coluna ){
                 const boneco = document.getElementById("boneco");
                     area_grid[pos_atual].appendChild(boneco);
+                }
+            }
+
+            function andarCima(){
+                if(posicao.y > 0){
+                    posicao.y--;
+                    andarBoneco();
+                }
+            }
+            function andarDireita(){
+                if(posicao.x < coluna -1){
+                    posicao.x++;
+                    andarBoneco();
+                }
+            }
+            function andarBaixo(){
+                if(posicao.y < linha -1){
+                    posicao.y++;
+                    andarBoneco();
+                }
+            }
+            function andarEsquerda(){
+                if(posicao.x > 0){
+                    posicao.x--;
+                    andarBoneco();
                 }
             }
         </script>
