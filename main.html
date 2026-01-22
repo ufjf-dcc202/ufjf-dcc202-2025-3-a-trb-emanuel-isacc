@@ -103,8 +103,8 @@
         <div id="hud">
             <div id="button-area">
                 <button class="button" onclick="salvarAcao(andarDirecao)">↑</button>
-                <div class="button"></div>
-                <div class="button"></div>
+                <button class="button" onclick="salvarAcao(virarDireita)">↱</button>
+                <button class="button" onclick="salvarAcao(virarEsquerda)">↰</button>
                 <div class="button"></div>
                 <div class="button"></div>
                 <div class="button"></div>
@@ -190,7 +190,7 @@
                     andarEsquerda();
                 }
             }
-            
+
                function virarDireita(){
                     direcao++;
                     verDirecao();
