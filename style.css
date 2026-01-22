@@ -85,6 +85,12 @@ main{
 #andar{
     background-image: url("./assets/botoes/frente.jpeg");
 }
+#direita{
+    background-image: url("./assets/botoes/direita.jpeg");
+}
+#esquerda{
+    background-image: url("./assets/botoes/esquerda.jpeg");
+}
 #go{
     background-image: url("./assets/botoes/go.jpeg");
 }
