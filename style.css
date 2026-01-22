@@ -88,3 +88,15 @@ main{
 #go{
     background-image: url("./assets/botoes/go.jpeg");
 }
+#boneco{
+    background-color: blue;
+    display:flex;
+    flex:1;
+    justify-content: center;
+    align-items: center;
+    background-image: url('./assets/boneco/cima.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+

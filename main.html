@@ -173,6 +173,26 @@
                     andarBoneco();
                 }
             }
+             function verDirecao(){
+                direcao = direcao%4;
+
+                if(direcao == 0){
+                    boneco.style.backgroundImage = "url('cima.png')";
+                    
+                }
+                if(direcao == 1 || direcao == -3){
+                    boneco.style.backgroundImage = "url('direita.png')";
+                   
+                }
+                if(direcao == 2 || direcao == -2){
+                    boneco.style.backgroundImage = "url(='baixo.png')";
+                    
+                }
+                if(direcao == 3 || direcao == -1){
+                    boneco.style.backgroundImage = "url('esquerda.png')";
+                    
+                }
+            }
 
             function andarDirecao(){
                 direcao = direcao%4;
