@@ -173,7 +173,7 @@
                     andarBoneco();
                 }
             }
-            
+
             function andarDirecao(){
                 direcao = direcao%4;
 
@@ -190,7 +190,19 @@
                     andarEsquerda();
                 }
             }
+            
+               function virarDireita(){
+                    direcao++;
+                    verDirecao();
+                }
+                function virarEsquerda(){
+                    direcao--;
+                    verDirecao();
+                }   
 
+            window.onload = () => {
+                andarBoneco();
+            };
 
 
             function salvarAcao (funcao){
