@@ -105,4 +105,8 @@ main{
     background-repeat: no-repeat;
     background-position: center;
 }
+#acoes-main{
+    display:flex;
+    gap: 5px;
+}
 

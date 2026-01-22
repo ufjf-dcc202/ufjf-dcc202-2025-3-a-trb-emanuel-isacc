@@ -228,8 +228,15 @@
 
 
             function salvarAcao (funcao){
+                if(filadamain.length >= 12){
+                    alert("Limite de 12 ações atingido manin");
+                    return;
+                }
+
                 filadamain.push(funcao);
                 console.log("Ação salva:", funcao.name);
+
+
             }
             function executarAcao(){
                 
