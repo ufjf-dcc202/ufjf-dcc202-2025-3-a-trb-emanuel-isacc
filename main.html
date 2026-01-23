@@ -279,9 +279,9 @@
 
             function colocaImagem(qual){
                 const grid_mae = document.querySelectorAll(".comando-main");
-                 const index = filadamain.length - 1;
+                const index = filadamain.length - 1;
                             
-                 if (index >= 0 && index < grid_mae.length) {
+                if (index >= 0 && index < grid_mae.length) {
                     if(qual == 1){
                      grid_mae[index].style.backgroundImage = "url('assets/botoes/frente.jpeg')";
                     }
@@ -292,36 +292,36 @@
                      grid_mae[index].style.backgroundImage = "url('assets/botoes/esquerda.jpeg')";
                     }
 
-                 } else {
-        console.warn("Índice inválido:", index);
-                 }
+                } else {
+                    console.warn("Índice inválido:", index);
+                }
             }
 
 
-            function salvarAcao (funcao){
+            function salvarAcao (comando){
                 if(filadamain.length >= 12){
                     alert("Limite de 12 ações atingido manin");
                     return;
                     
                 }
 
-                filadamain.push(funcao);
-                console.log("Ação salva:", funcao.name);
+                filadamain.push(comando);
+                console.log("Ação salva:", comando.name);
 
 
             }
             function executarAcao(){
                 
-                filadamain.forEach((funcao, i)  => {
+                filadamain.forEach((comando, i)  => {
                     setTimeout(() => {
-                        funcao();
+                        comando();
                     }, i*500);
                  })
                 filadamain = [];
             }
 
-            function SalvareColocar(funcao, qual){
-                salvarAcao(funcao);
+            function SalvareColocar(comando, qual){
+                salvarAcao(comando);
                 colocaImagem(qual);
             }
 
