@@ -307,7 +307,11 @@
             }
             function executarAcao(){
                 
-                filadamain.forEach(funcao => funcao());
+                filadamain.forEach((funcao, i)  => {
+                    setTimeout(() => {
+                        funcao();
+                    }, i*500);
+                 })
                 filadamain = [];
             }
 
