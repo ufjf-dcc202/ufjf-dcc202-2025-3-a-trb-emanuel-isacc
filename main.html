@@ -163,6 +163,34 @@
             direcao = 0;
             filadamain = [];
 
+            const fmain = document.getElementById("fmain");
+            const f1 = document.getElementById("f1");
+            const f2 = document.getElementById("f2");
+            
+            window.onload = () => { 
+                andarBoneco();
+            }
+
+            // SELECIONA FUNÇÃO - FUNCIONA O TEMPO TODO
+            fmain.addEventListener("click", () => selecionaFuncao("fmain"));
+            f1.addEventListener("click", () => selecionaFuncao("f1"));
+            f2.addEventListener("click", () => selecionaFuncao("f2"));
+            
+            function selecionaFuncao(nome_funcao){
+                fmain.style.backgroundColor = "";
+                f1.style.backgroundColor = "";
+                f2.style.backgroundColor = "";
+
+                if (nome_funcao == "fmain"){
+                    fmain.style.backgroundColor = "green";
+                }else if(nome_funcao == "f1"){
+                    f1.style.backgroundColor = "green";
+                }else if(nome_funcao == "f2"){
+                    f2.style.backgroundColor = "green";
+                }
+            }
+
+
 
             function andarBoneco(){
             const pos_atual = posicao.y * coluna + posicao.x;
@@ -243,9 +271,6 @@
                     verDirecao();
                 }   
 
-            window.onload = () => { 
-                andarBoneco();
-            }
 
             function colocaImagem(qual){
                 const grid_mae = document.querySelectorAll(".comando-main");
@@ -290,6 +315,7 @@
                 salvarAcao(funcao);
                 colocaImagem(qual);
             }
+
         </script>
     </main>
 </body>
