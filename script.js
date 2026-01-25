@@ -276,13 +276,13 @@ function colocaImagem(qual, fila, grid_funcao){
 function salvarAcao (comando, fila){
     if(fila.length >= 12){
         alert("Limite de 12 ações atingido manin");
-        return;
+        return false;
         
     }
 
     fila.push(comando);
     console.log("Ação salva:", comando.name);
-
+    return true;
 
 }
 function executarAcao(){
@@ -310,6 +310,7 @@ function SalvareColocar(comando, qual){
         fila = filadaf2;
         grid_funcao = document.querySelectorAll(".comando-f2");
     }
-    salvarAcao(comando, fila);
+   if(salvarAcao(comando, fila)){
     colocaImagem(qual, fila, grid_funcao);
+   }
 }
