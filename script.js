@@ -4,11 +4,15 @@ let alturas = new Array(area_grid.length).fill(0);
 
 const altura1 = [29,38,39,47,48,49,56,57,58,65,66,67,74,75,76];
 const altura2 = [59,68,69,77,78,79];
+const comida = [12,22,45,54,72];
 for(const i of altura1){
     alturas[i] = 1;
 }
 for(const i of altura2){
     alturas[i] = 2;
+}
+for (const i of comida){
+    area_grid[i].classList.add("comida");
 }
 
 /*
@@ -144,6 +148,13 @@ function andarEsquerda(){
     }
 }
 
+function interagir(){
+    const pos_atual = posicao.y * coluna + posicao.x;
+    if(area_grid[pos_atual].classList.contains("comida")){
+        area_grid[pos_atual].classList.remove("comida");
+
+    }
+}
 
 function verDirecao(){
     const boneco = document.getElementById("boneco");
@@ -195,7 +206,7 @@ function andarDirecao(){
 
         if(direcao == 0){
             proxima_casa = (posicao.y-1) * coluna + posicao.x;
-            if(math.abs(alturas[proxima_casa] - posicao.z == 1)){ 
+            if(Math.abs(alturas[proxima_casa] - posicao.z) == 1){ 
             posicao.z = alturas[proxima_casa];
             posicao.y--;
             andarBoneco();
@@ -203,7 +214,7 @@ function andarDirecao(){
         }
         if(direcao == 1){
             proxima_casa = posicao.y * coluna + (posicao.x +1);
-            if(math.abs(alturas[proxima_casa] - posicao.z == 1)){
+            if(Math.abs(alturas[proxima_casa] - posicao.z) == 1){
             posicao.z = alturas[proxima_casa];
             posicao.x++;
             andarBoneco();
@@ -211,7 +222,7 @@ function andarDirecao(){
         }
         if(direcao == 2){
             proxima_casa = (posicao.y +1) * coluna + posicao.x;
-            if(Math.abs(alturas[proxima_casa] - posicao.z == 1)){
+            if(Math.abs(alturas[proxima_casa] - posicao.z) == 1){
             posicao.z = alturas[proxima_casa];
             posicao.y++;
             andarBoneco();
@@ -219,7 +230,7 @@ function andarDirecao(){
         }
         if(direcao == 3){
             proxima_casa = posicao.y * coluna + (posicao.x -1);
-            if(Math.abs(alturas[proxima_casa] - posicao.z == 1)){
+            if(Math.abs(alturas[proxima_casa] - posicao.z) == 1){
             posicao.z = alturas[proxima_casa];
             posicao.x--;
             andarBoneco();
