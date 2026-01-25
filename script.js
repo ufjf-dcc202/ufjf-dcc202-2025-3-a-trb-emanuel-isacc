@@ -239,41 +239,15 @@ function colocaImagem(qual, fila, grid_funcao){
         "url('assets/botoes/interagir.jpeg')"
     ];
                 
-    if (index >= 0 && index < grid_funcao.length) {
-        grid_funcao[index].style.backgroundImage = url_botoes[qual];
-        
-        /*
-        if(qual == 1){
-            grid_funcao[index].style.backgroundImage = "url('assets/botoes/frente.jpeg')";
-        } else if(qual == 2){
-            grid_funcao[index].style.backgroundImage = "url('assets/botoes/direita.jpeg')";
-        } else if(qual == 3){
-            grid_funcao[index].style.backgroundImage = "url('assets/botoes/esquerda.jpeg')";
-        } else if(qual == 4){
-            grid_funcao[index].style.backgroundImage = "url('assets/botoes/pular.jpeg')";
-        } else if(qual == 5){
-            grid_funcao[index].style.backgroundImage = "url('assets/botoes/interagir.jpeg')";
-        }
-            */
-
-    } else {
-        console.warn("Índice inválido:", index);
-    }
+    grid_funcao[index].style.backgroundImage = url_botoes[qual];
 }
 
 
 function salvarAcao (comando, fila){
-    if(fila.length >= 12){
-        alert("Limite de 12 ações atingido manin");
-        return;
-        
-    }
-
     fila.push(comando);
     console.log("Ação salva:", comando.name);
-
-
 }
+
 function executarAcao(){
     
     filadamain.forEach((comando, i)  => {
@@ -285,10 +259,11 @@ function executarAcao(){
 }
 
 function SalvareColocar(comando, qual){
+
     console.log(funcao_selecionada);
-    console.log(typeof funcao_selecionada);
     let fila;
     let grid_funcao;
+
     if (funcao_selecionada == 0){ 
         fila = filadamain;
         grid_funcao = document.querySelectorAll(".comando-main");
@@ -299,6 +274,12 @@ function SalvareColocar(comando, qual){
         fila = filadaf2;
         grid_funcao = document.querySelectorAll(".comando-f2");
     }
-    salvarAcao(comando, fila);
-    colocaImagem(qual, fila, grid_funcao);
+
+    if(fila.length < grid_funcao.length){
+        salvarAcao(comando, fila);
+        colocaImagem(qual, fila, grid_funcao);
+    } else {
+        alert("Limite de ações atingido.");
+    }
+
 }
