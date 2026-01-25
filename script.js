@@ -117,6 +117,7 @@ function andarEsquerda(){
     }
 }
 
+
 function verDirecao(){
     const boneco = document.getElementById("boneco");
 
@@ -163,7 +164,40 @@ function andarDirecao(){
         verDirecao();
     }   
     function pular(){
+        let proxima_casa;
 
+        if(direcao == 0){
+            proxima_casa = (posicao.y-1) * coluna + posicao.x;
+            if(alturas[proxima_casa] - posicao.z == 1){ 
+            posicao.z = alturas[proxima_casa];
+            posicao.y--;
+            andarBoneco();
+            }
+        }
+        if(direcao == 1){
+            proxima_casa = posicao.y * coluna + (posicao.x +1);
+            if(alturas[proxima_casa] - posicao.z == 1){
+            posicao.z = alturas[proxima_casa];
+            posicao.x++;
+            andarBoneco();
+            }
+        }
+        if(direcao == 2){
+            proxima_casa = (posicao.y +1) * coluna + posicao.x;
+            if(alturas[proxima_casa] - posicao.z == 1){
+            posicao.z = alturas[proxima_casa];
+            posicao.y++;
+            andarBoneco();
+            }
+        }
+        if(direcao == 3){
+            proxima_casa = posicao.y * coluna + (posicao.x -1);
+            if(alturas[proxima_casa] - posicao.z == 1){
+            posicao.z = alturas[proxima_casa];
+            posicao.x--;
+            andarBoneco();
+            }
+       }
     }
 
 
