@@ -158,6 +158,9 @@ main{
     background-color: darkred;
 }
 .comida{
-    background-color: darkgreen
+    background-image: url('./assets/pipoca.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
 }
 
