@@ -180,12 +180,14 @@
             };
             direcao = 0;
             filadamain = [];
+            filadaf1 = [];
+            filadaf2= [];
 
             const fmain = document.getElementById("fmain");
             const f1 = document.getElementById("f1");
             const f2 = document.getElementById("f2");
 
-            funcao_selecionada = 0;
+            let funcao_selecionada = 0;
             
             window.onload = () => { 
                 andarBoneco();
@@ -295,19 +297,19 @@
                 }   
 
 
-            function colocaImagem(qual){
-                const grid_mae = document.querySelectorAll(".comando-main");
-                const index = filadamain.length - 1;
+            function colocaImagem(qual, fila, grid_funcao){
+                
+                const index = fila.length - 1;
                             
-                if (index >= 0 && index < grid_mae.length) {
+                if (index >= 0 && index < grid_funcao.length) {
                     if(qual == 1){
-                     grid_mae[index].style.backgroundImage = "url('assets/botoes/frente.jpeg')";
+                        grid_funcao[index].style.backgroundImage = "url('assets/botoes/frente.jpeg')";
                     }
                     else if(qual == 2){
-                     grid_mae[index].style.backgroundImage = "url('assets/botoes/direita.jpeg')";
+                        grid_funcao[index].style.backgroundImage = "url('assets/botoes/direita.jpeg')";
                     }
                     else if(qual == 3){
-                     grid_mae[index].style.backgroundImage = "url('assets/botoes/esquerda.jpeg')";
+                        grid_funcao[index].style.backgroundImage = "url('assets/botoes/esquerda.jpeg')";
                     }
 
                 } else {
@@ -316,14 +318,14 @@
             }
 
 
-            function salvarAcao (comando){
-                if(filadamain.length >= 12){
+            function salvarAcao (comando, fila){
+                if(fila.length >= 12){
                     alert("Limite de 12 ações atingido manin");
                     return;
                     
                 }
 
-                filadamain.push(comando);
+                fila.push(comando);
                 console.log("Ação salva:", comando.name);
 
 
@@ -339,8 +341,22 @@
             }
 
             function SalvareColocar(comando, qual){
-                salvarAcao(comando);
-                colocaImagem(qual);
+                console.log(funcao_selecionada);
+                console.log(typeof funcao_selecionada);
+                let fila;
+                let grid_funcao;
+                if (funcao_selecionada == 0){ 
+                    fila = filadamain;
+                    grid_funcao = document.querySelectorAll(".comando-main");
+                } else if (funcao_selecionada == 1){
+                    fila = filadaf1;
+                    grid_funcao = document.querySelectorAll(".comando-f1");
+                } else if (funcao_selecionada == 2){
+                    fila = filadaf2;
+                    grid_funcao = document.querySelectorAll(".comando-f2");
+                }
+                salvarAcao(comando, fila);
+                colocaImagem(qual, fila, grid_funcao);
             }
 
         </script>
