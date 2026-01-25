@@ -1,6 +1,17 @@
 
 const area_grid = document.querySelectorAll(".grid-square");
 let alturas = new Array(area_grid.length).fill(0);
+
+const altura1 = [29,38,39,47,48,49,56,57,58,65,66,67,74,75,76];
+const altura2 = [59,68,69,77,78,79];
+for(const i of altura1){
+    alturas[i] = 1;
+}
+for(const i of altura2){
+    alturas[i] = 2;
+}
+
+/*
 alturas[29] = 1;
 alturas[38] = 1;
 alturas[39] = 1;
@@ -22,6 +33,7 @@ alturas[69] = 2;
 alturas[77] = 2;
 alturas[78] = 2;
 alturas[79] = 2;
+*/
 
 alturas.forEach((valor,index) => {
     if(valor == 1){
