@@ -17,7 +17,6 @@ main{
 #function-area{
     display: flex;
     flex-direction: column;
-    border: 1px solid orange;
     height: 100%;
     width: 28vw;
     justify-content: space-around;
