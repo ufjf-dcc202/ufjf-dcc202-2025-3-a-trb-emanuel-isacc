@@ -127,6 +127,12 @@ main{
 #interagir{
     background-image: url("./assets/botoes/interagir.jpeg");
 }
+#botao-f1{
+    background-image: url("./assets/botoes/f1.jpeg");
+}
+#botao-f2{
+    background-image: url("./assets/botoes/f2.jpeg");
+}
 #go{
     background-image: url("./assets/botoes/go.jpeg");
 }

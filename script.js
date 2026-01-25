@@ -247,7 +247,9 @@ function colocaImagem(qual, fila, grid_funcao){
         "url('assets/botoes/direita.jpeg')",
         "url('assets/botoes/esquerda.jpeg')",
         "url('assets/botoes/pular.jpeg')",
-        "url('assets/botoes/interagir.jpeg')"
+        "url('assets/botoes/interagir.jpeg')",
+        "url('assets/botoes/f1.jpeg')",
+        "url('assets/botoes/f2.jpeg')"
     ];
                 
     grid_funcao[index].style.backgroundImage = url_botoes[qual];
@@ -260,12 +262,23 @@ function salvarAcao (comando, fila){
 }
 
 function executarAcao(){
-    
     filadamain.forEach((comando, i)  => {
-        setTimeout(() => {
-            comando();
-        }, i*500);
-        })
+        setTimeout(() => {comando();}, i*500);
+    })
+    filadamain = [];
+}
+
+function executarF1(){
+    filadaf1.forEach((comando, i)  => {
+        setTimeout(() => {comando();}, i*500);
+    })
+    filadamain = [];
+}
+
+function executarF2(){
+    filadaf2.forEach((comando, i)  => {
+        setTimeout(() => {comando();}, i*500);
+    })
     filadamain = [];
 }
 
