@@ -89,31 +89,46 @@ const pos_atual = posicao.y * coluna + posicao.x;
 }
 
 function andarCima(){
-    const direcao = alturas[(posicao.y-1) * coluna + posicao.x];
-    if(posicao.y > 0 && posicao.z == direcao){
-        posicao.y--;
-        andarBoneco();
+    if(posicao.y > 0){
+        const destinoIndex = (posicao.y - 1) * coluna + posicao.x;
+        if(alturas[destinoIndex] <= posicao.z){
+            posicao.y--;
+            posicao.z = alturas[destinoIndex]; // atualiza altura
+            andarBoneco();
+        }
     }
 }
+
 function andarDireita(){
-    const direcao = alturas[posicao.y * coluna + (posicao.x +1)];
-    if(posicao.x < coluna -1  && posicao.z == direcao){
-        posicao.x++;
-        andarBoneco();
+    if(posicao.x < coluna - 1){
+        const destinoIndex = posicao.y * coluna + (posicao.x + 1);
+        if(alturas[destinoIndex] <= posicao.z){
+            posicao.x++;
+            posicao.z = alturas[destinoIndex];
+            andarBoneco();
+        }
     }
 }
+
 function andarBaixo(){
-    const direcao = alturas[(posicao.y +1) * coluna + posicao.x];
-    if(posicao.y < linha -1  && posicao.z == direcao){
-        posicao.y++;
-        andarBoneco();
+    if(posicao.y < linha - 1){
+        const destinoIndex = (posicao.y + 1) * coluna + posicao.x;
+        if(alturas[destinoIndex] <= posicao.z){
+            posicao.y++;
+            posicao.z = alturas[destinoIndex];
+            andarBoneco();
+        }
     }
 }
+
 function andarEsquerda(){
-    const direcao = alturas[posicao.y * coluna + (posicao.x -1)];
-    if(posicao.x > 0  && posicao.z == direcao){
-        posicao.x--;
-        andarBoneco();
+    if(posicao.x > 0){
+        const destinoIndex = posicao.y * coluna + (posicao.x - 1);
+        if(alturas[destinoIndex] <= posicao.z){
+            posicao.x--;
+            posicao.z = alturas[destinoIndex];
+            andarBoneco();
+        }
     }
 }
 
@@ -168,7 +183,7 @@ function andarDirecao(){
 
         if(direcao == 0){
             proxima_casa = (posicao.y-1) * coluna + posicao.x;
-            if(alturas[proxima_casa] - posicao.z == 1){ 
+            if(math.abs(alturas[proxima_casa] - posicao.z == 1)){ 
             posicao.z = alturas[proxima_casa];
             posicao.y--;
             andarBoneco();
@@ -176,7 +191,7 @@ function andarDirecao(){
         }
         if(direcao == 1){
             proxima_casa = posicao.y * coluna + (posicao.x +1);
-            if(alturas[proxima_casa] - posicao.z == 1){
+            if(math.abs(alturas[proxima_casa] - posicao.z == 1)){
             posicao.z = alturas[proxima_casa];
             posicao.x++;
             andarBoneco();
@@ -184,7 +199,7 @@ function andarDirecao(){
         }
         if(direcao == 2){
             proxima_casa = (posicao.y +1) * coluna + posicao.x;
-            if(alturas[proxima_casa] - posicao.z == 1){
+            if(Math.abs(alturas[proxima_casa] - posicao.z == 1)){
             posicao.z = alturas[proxima_casa];
             posicao.y++;
             andarBoneco();
@@ -192,7 +207,7 @@ function andarDirecao(){
         }
         if(direcao == 3){
             proxima_casa = posicao.y * coluna + (posicao.x -1);
-            if(alturas[proxima_casa] - posicao.z == 1){
+            if(Math.abs(alturas[proxima_casa] - posicao.z == 1)){
             posicao.z = alturas[proxima_casa];
             posicao.x--;
             andarBoneco();
