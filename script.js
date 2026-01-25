@@ -208,12 +208,14 @@ function colocaImagem(qual, fila, grid_funcao){
     if (index >= 0 && index < grid_funcao.length) {
         if(qual == 1){
             grid_funcao[index].style.backgroundImage = "url('assets/botoes/frente.jpeg')";
-        }
-        else if(qual == 2){
+        } else if(qual == 2){
             grid_funcao[index].style.backgroundImage = "url('assets/botoes/direita.jpeg')";
-        }
-        else if(qual == 3){
+        } else if(qual == 3){
             grid_funcao[index].style.backgroundImage = "url('assets/botoes/esquerda.jpeg')";
+        } else if(qual == 4){
+            grid_funcao[index].style.backgroundImage = "url('assets/botoes/pular.jpeg')";
+        } else if(qual == 5){
+            grid_funcao[index].style.backgroundImage = "url('assets/botoes/interagir.jpeg')";
         }
 
     } else {

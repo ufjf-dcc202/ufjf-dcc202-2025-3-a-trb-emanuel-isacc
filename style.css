@@ -121,6 +121,12 @@ main{
 #esquerda{
     background-image: url("./assets/botoes/esquerda.jpeg");
 }
+#pular{
+    background-image: url("./assets/botoes/pular.jpeg");
+}
+#interagir{
+    background-image: url("./assets/botoes/interagir.jpeg");
+}
 #go{
     background-image: url("./assets/botoes/go.jpeg");
 }
