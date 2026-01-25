@@ -3,18 +3,32 @@ const area_grid = document.querySelectorAll(".grid-square");
 let alturas = new Array(area_grid.length).fill(0);
 alturas[29] = 1;
 alturas[38] = 1;
+alturas[39] = 1;
 alturas[47] = 1;
-alturas[65] = 1;
-alturas[56] = 1;
-alturas[74] = 1;
+alturas[48] = 1;
 alturas[49] = 1;
+alturas[56] = 1;
+alturas[57] = 1;
 alturas[58] = 1;
+alturas[65] = 1;
+alturas[66] = 1;
 alturas[67] = 1;
+alturas[74] = 1;
+alturas[75] = 1;
 alturas[76] = 1;
+alturas[59] = 2;
+alturas[68] = 2;
+alturas[69] = 2;
+alturas[77] = 2;
+alturas[78] = 2;
+alturas[79] = 2;
 
 alturas.forEach((valor,index) => {
     if(valor == 1){
-        area_grid[index].classList.add("ativo");
+        area_grid[index].classList.add("ativo1");
+    }
+    else if(valor == 2){
+        area_grid[index].classList.add("ativo2");
     }
 });
 
@@ -24,7 +38,8 @@ const linha = 8;
 
 posicao = {
     x : 3,
-    y : 2
+    y : 2,
+    z : 0
 };
 direcao = 0;
 filadamain = [];
@@ -74,25 +89,29 @@ const pos_atual = posicao.y * coluna + posicao.x;
 }
 
 function andarCima(){
-    if(posicao.y > 0){
+    const direcao = alturas[(posicao.y-1) * coluna + posicao.x];
+    if(posicao.y > 0 && posicao.z == direcao){
         posicao.y--;
         andarBoneco();
     }
 }
 function andarDireita(){
-    if(posicao.x < coluna -1){
+    const direcao = alturas[posicao.y * coluna + (posicao.x +1)];
+    if(posicao.x < coluna -1  && posicao.z == direcao){
         posicao.x++;
         andarBoneco();
     }
 }
 function andarBaixo(){
-    if(posicao.y < linha -1){
+    const direcao = alturas[(posicao.y +1) * coluna + posicao.x];
+    if(posicao.y < linha -1  && posicao.z == direcao){
         posicao.y++;
         andarBoneco();
     }
 }
 function andarEsquerda(){
-    if(posicao.x > 0){
+    const direcao = alturas[posicao.y * coluna + (posicao.x -1)];
+    if(posicao.x > 0  && posicao.z == direcao){
         posicao.x--;
         andarBoneco();
     }
@@ -143,6 +162,9 @@ function andarDirecao(){
         if(direcao < 0) direcao +=4;
         verDirecao();
     }   
+    function pular(){
+
+    }
 
 
 function colocaImagem(qual, fila, grid_funcao){

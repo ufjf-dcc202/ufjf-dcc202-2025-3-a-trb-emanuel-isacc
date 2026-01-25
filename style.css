@@ -139,7 +139,10 @@ main{
     display:flex;
     gap: 5px;
 }
-.ativo{
+.ativo1{
     background-color: darkblue;
+}
+.ativo2{
+    background-color: darkred;
 }
 
