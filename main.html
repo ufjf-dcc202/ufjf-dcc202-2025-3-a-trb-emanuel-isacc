@@ -152,6 +152,24 @@
        
             <script>
             const area_grid = document.querySelectorAll(".grid-square");
+            let alturas = new Array(area_grid.length).fill(0);
+            alturas[29] = 1;
+            alturas[38] = 1;
+            alturas[47] = 1;
+            alturas[65] = 1;
+            alturas[56] = 1;
+            alturas[74] = 1;
+            alturas[49] = 1;
+            alturas[58] = 1;
+            alturas[67] = 1;
+            alturas[76] = 1;
+
+            alturas.forEach((valor,index) => {
+                if(valor == 1){
+                    area_grid[index].classList.add("ativo");
+                }
+            });
+
             const coluna = 10;
             const linha = 8;
 

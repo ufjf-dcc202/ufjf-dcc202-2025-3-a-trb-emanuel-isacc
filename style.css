@@ -140,4 +140,7 @@ main{
     display:flex;
     gap: 5px;
 }
+.ativo{
+    background-color: darkblue;
+}
 
