@@ -231,8 +231,18 @@ function andarDirecao(){
 function colocaImagem(qual, fila, grid_funcao){
     
     const index = fila.length - 1;
+    const url_botoes = ["",
+        "url('assets/botoes/frente.jpeg')",
+        "url('assets/botoes/direita.jpeg')",
+        "url('assets/botoes/esquerda.jpeg')",
+        "url('assets/botoes/pular.jpeg')",
+        "url('assets/botoes/interagir.jpeg')"
+    ];
                 
     if (index >= 0 && index < grid_funcao.length) {
+        grid_funcao[index].style.backgroundImage = url_botoes[qual];
+        
+        /*
         if(qual == 1){
             grid_funcao[index].style.backgroundImage = "url('assets/botoes/frente.jpeg')";
         } else if(qual == 2){
@@ -244,6 +254,7 @@ function colocaImagem(qual, fila, grid_funcao){
         } else if(qual == 5){
             grid_funcao[index].style.backgroundImage = "url('assets/botoes/interagir.jpeg')";
         }
+            */
 
     } else {
         console.warn("Índice inválido:", index);
