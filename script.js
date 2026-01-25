@@ -15,29 +15,12 @@ for (const i of comida){
     area_grid[i].classList.add("comida");
 }
 
-/*
-alturas[29] = 1;
-alturas[38] = 1;
-alturas[39] = 1;
-alturas[47] = 1;
-alturas[48] = 1;
-alturas[49] = 1;
-alturas[56] = 1;
-alturas[57] = 1;
-alturas[58] = 1;
-alturas[65] = 1;
-alturas[66] = 1;
-alturas[67] = 1;
-alturas[74] = 1;
-alturas[75] = 1;
-alturas[76] = 1;
-alturas[59] = 2;
-alturas[68] = 2;
-alturas[69] = 2;
-alturas[77] = 2;
-alturas[78] = 2;
-alturas[79] = 2;
-*/
+
+let estado_jogo = 0;
+//0 -> parado
+//1 -> executando
+//2 -> executando, mas deve parar
+
 
 alturas.forEach((valor,index) => {
     if(valor == 1){
@@ -261,22 +244,30 @@ function salvarAcao (comando, fila){
     console.log("Ação salva:", comando.name);
 }
 
-function executarAcao(){
-    filadamain.forEach((comando, i)  => {
-        setTimeout(() => {comando();}, i*500);
-    })
+function go(){
+    if (estado_jogo == 0) {
+        estado_jogo = 1;
+        executarAcao();
+    }
+    else if (estado_jogo == 1) estado_jogo = 2;
 }
 
-function executarF1(){
-    filadaf1.forEach((comando, i)  => {
-        setTimeout(() => {comando();}, i*500);
-    })
+function executarAcao(i = 0){
+    if (estado_jogo == 2 || i >= filadamain.length) return;
+    filadamain[i]();
+    setTimeout(() => {executarAcao(i + 1);}, 500);
 }
 
-function executarF2(){
-    filadaf2.forEach((comando, i)  => {
-        setTimeout(() => {comando();}, i*500);
-    })
+function executarF1(i = 0){
+    if (estado_jogo == 2 || i >= filadaf1.length) return;
+    filadaf1[i]();
+    setTimeout(() => {executarF1(i + 1);}, 500);
+}
+
+function executarF2(i = 0){
+    if (estado_jogo == 2 || i >= filadaf2.length) return;
+    filadaf2[i]();
+    setTimeout(() => {executarF2(i + 1);}, 500);
 }
 
 function SalvareColocar(comando, qual){
