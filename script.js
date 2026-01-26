@@ -11,8 +11,26 @@ for(const i of altura1){
 for(const i of altura2){
     alturas[i] = 2;
 }
-for (const i of comida){
-    area_grid[i].classList.add("comida");
+
+let posicao;
+let direcao;
+
+function posicionaComida(){
+    for (const i of comida){
+        area_grid[i].classList.add("comida");
+    }
+}
+function posicionaBoneco(){
+    posicao = {
+        x : 3,
+        y : 2,
+        z : 0
+    };
+    direcao = 0;
+    const pos_atual = posicao.y * coluna + posicao.x;
+    const boneco = document.getElementById("boneco");
+    area_grid[pos_atual].appendChild(boneco);
+    verDirecao();
 }
 
 
@@ -34,16 +52,9 @@ alturas.forEach((valor,index) => {
 const coluna = 10;
 const linha = 8;
 
-
-posicao = {
-    x : 3,
-    y : 2,
-    z : 0
-};
-direcao = 0;
 filadamain = [];
 filadaf1 = [];
-filadaf2= [];
+filadaf2 = [];
 
 const fmain = document.getElementById("fmain");
 const f1 = document.getElementById("f1");
@@ -51,7 +62,9 @@ const f2 = document.getElementById("f2");
 
 let funcao_selecionada = 0;
 
-window.onload = () => { 
+window.onload = () => {
+    posicionaBoneco();
+    posicionaComida();
     andarBoneco();
     selecionaFuncao(0);
 }
@@ -252,38 +265,40 @@ function sleep(tempo){
 }
 
 async function go(){
-    if (estado_jogo == 0) {
+    if (estado_jogo == 0) { // inicia execução
         estado_jogo = 1;
         await executarAcao();
+        console.log("Execução encerrada.")
+        posicionaBoneco();
+        posicionaComida();
         estado_jogo = 0;
         
-    } else if (estado_jogo == 1) {
+    } else if (estado_jogo == 1) { // encerra execução
         estado_jogo = 2;
-        console.log("Execução encerrada.")
     }
 }
 
 async function executarAcao(){
     for (let i = 0; i < filadamain.length; i++) {
+        if(filadamain[i] != executarF1 && filadamain[i] != executarF2) await sleep(500);
         if (estado_jogo == 2) return;
-        await sleep(500);
         await filadamain[i]();
     }
 }
 
 async function executarF1(){
     for (let i = 0; i < filadaf1.length; i++) {
+        if(filadaf1[i] != executarF1 && filadaf1[i] != executarF2) await sleep(500);
         if (estado_jogo == 2) return;
         await filadaf1[i]();
-        await sleep(500);
     }
 }
 
 async function executarF2(){
     for (let i = 0; i < filadaf2.length; i++) {
+        if(filadaf2[i] != executarF1 && filadaf2[i] != executarF2) await sleep(500);
         if (estado_jogo == 2) return;
         await filadaf2[i]();
-        await sleep(500);
     }
 }
 
