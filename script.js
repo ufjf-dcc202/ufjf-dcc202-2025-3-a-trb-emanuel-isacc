@@ -244,30 +244,47 @@ function salvarAcao (comando, fila){
     console.log("Ação salva:", comando.name);
 }
 
-function go(){
+
+// EXECUÇÃO DOS COMANDOS
+
+function sleep(tempo){
+    return new Promise(resolve => setTimeout(resolve, tempo));
+}
+
+async function go(){
     if (estado_jogo == 0) {
         estado_jogo = 1;
-        executarAcao();
+        await executarAcao();
+        estado_jogo = 0;
+        
+    } else if (estado_jogo == 1) {
+        estado_jogo = 2;
+        console.log("Execução encerrada.")
     }
-    else if (estado_jogo == 1) estado_jogo = 2;
 }
 
-function executarAcao(i = 0){
-    if (estado_jogo == 2 || i >= filadamain.length) return;
-    filadamain[i]();
-    setTimeout(() => {executarAcao(i + 1);}, 500);
+async function executarAcao(){
+    for (let i = 0; i < filadamain.length; i++) {
+        if (estado_jogo == 2) return;
+        await sleep(500);
+        await filadamain[i]();
+    }
 }
 
-function executarF1(i = 0){
-    if (estado_jogo == 2 || i >= filadaf1.length) return;
-    filadaf1[i]();
-    setTimeout(() => {executarF1(i + 1);}, 500);
+async function executarF1(){
+    for (let i = 0; i < filadaf1.length; i++) {
+        if (estado_jogo == 2) return;
+        await filadaf1[i]();
+        await sleep(500);
+    }
 }
 
-function executarF2(i = 0){
-    if (estado_jogo == 2 || i >= filadaf2.length) return;
-    filadaf2[i]();
-    setTimeout(() => {executarF2(i + 1);}, 500);
+async function executarF2(){
+    for (let i = 0; i < filadaf2.length; i++) {
+        if (estado_jogo == 2) return;
+        await filadaf2[i]();
+        await sleep(500);
+    }
 }
 
 function SalvareColocar(comando, qual){
