@@ -11,8 +11,20 @@ for(const i of altura1){
 for(const i of altura2){
     alturas[i] = 2;
 }
-for (const i of comida){
-    area_grid[i].classList.add("comida");
+
+let posicao;
+
+function posicionaComida(){
+    for (const i of comida){
+        area_grid[i].classList.add("comida");
+    }
+}
+function posicionaBoneco(){
+    posicao = {
+        x : 3,
+        y : 2,
+        z : 0
+    };
 }
 
 
@@ -34,16 +46,10 @@ alturas.forEach((valor,index) => {
 const coluna = 10;
 const linha = 8;
 
-
-posicao = {
-    x : 3,
-    y : 2,
-    z : 0
-};
 direcao = 0;
 filadamain = [];
 filadaf1 = [];
-filadaf2= [];
+filadaf2 = [];
 
 const fmain = document.getElementById("fmain");
 const f1 = document.getElementById("f1");
@@ -51,7 +57,9 @@ const f2 = document.getElementById("f2");
 
 let funcao_selecionada = 0;
 
-window.onload = () => { 
+window.onload = () => {
+    posicionaBoneco();
+    posicionaComida();
     andarBoneco();
     selecionaFuncao(0);
 }
