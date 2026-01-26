@@ -13,6 +13,7 @@ for(const i of altura2){
 }
 
 let posicao;
+let direcao;
 
 function posicionaComida(){
     for (const i of comida){
@@ -25,6 +26,11 @@ function posicionaBoneco(){
         y : 2,
         z : 0
     };
+    direcao = 0;
+    const pos_atual = posicao.y * coluna + posicao.x;
+    const boneco = document.getElementById("boneco");
+    area_grid[pos_atual].appendChild(boneco);
+    verDirecao();
 }
 
 
@@ -46,7 +52,6 @@ alturas.forEach((valor,index) => {
 const coluna = 10;
 const linha = 8;
 
-direcao = 0;
 filadamain = [];
 filadaf1 = [];
 filadaf2 = [];
@@ -260,38 +265,40 @@ function sleep(tempo){
 }
 
 async function go(){
-    if (estado_jogo == 0) {
+    if (estado_jogo == 0) { // inicia execução
         estado_jogo = 1;
         await executarAcao();
+        console.log("Execução encerrada.")
+        posicionaBoneco();
+        posicionaComida();
         estado_jogo = 0;
         
-    } else if (estado_jogo == 1) {
+    } else if (estado_jogo == 1) { // encerra execução
         estado_jogo = 2;
-        console.log("Execução encerrada.")
     }
 }
 
 async function executarAcao(){
     for (let i = 0; i < filadamain.length; i++) {
-        if (estado_jogo == 2) return;
         await sleep(500);
+        if (estado_jogo == 2) return;
         await filadamain[i]();
     }
 }
 
 async function executarF1(){
     for (let i = 0; i < filadaf1.length; i++) {
+        await sleep(500);
         if (estado_jogo == 2) return;
         await filadaf1[i]();
-        await sleep(500);
     }
 }
 
 async function executarF2(){
     for (let i = 0; i < filadaf2.length; i++) {
+        await sleep(500);
         if (estado_jogo == 2) return;
         await filadaf2[i]();
-        await sleep(500);
     }
 }
 
