@@ -268,11 +268,11 @@ async function go(){
     if (estado_jogo == 0) { // inicia execução
         estado_jogo = 1;
         await executarAcao();
+        await sleep(1000);
         console.log("Execução encerrada.")
         posicionaBoneco();
         posicionaComida();
         estado_jogo = 0;
-        
     } else if (estado_jogo == 1) { // encerra execução
         estado_jogo = 2;
     }
