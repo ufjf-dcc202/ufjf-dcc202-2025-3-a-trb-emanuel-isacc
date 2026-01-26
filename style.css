@@ -158,7 +158,7 @@ main{
 }
 .comida{
     background-image: url('./assets/pipoca.png');
-    background-size: contain;
+    background-size: 50%;
     background-repeat: no-repeat;
     background-position: center;
 }
