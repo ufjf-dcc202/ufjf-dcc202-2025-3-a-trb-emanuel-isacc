@@ -280,7 +280,7 @@ async function go(){
 
 async function executarAcao(){
     for (let i = 0; i < filadamain.length; i++) {
-        await sleep(500);
+        if(filadamain[i] != f1 && filadamain[i] != f1)await sleep(500);
         if (estado_jogo == 2) return;
         await filadamain[i]();
     }
@@ -288,7 +288,7 @@ async function executarAcao(){
 
 async function executarF1(){
     for (let i = 0; i < filadaf1.length; i++) {
-        await sleep(500);
+        if(filadaf1[i] != f1 && filadaf1[i] != f1) await sleep(500);
         if (estado_jogo == 2) return;
         await filadaf1[i]();
     }
@@ -296,7 +296,7 @@ async function executarF1(){
 
 async function executarF2(){
     for (let i = 0; i < filadaf2.length; i++) {
-        await sleep(500);
+        if(filadaf2[i] != f1 && filadaf2[i] != f1) await sleep(500);
         if (estado_jogo == 2) return;
         await filadaf2[i]();
     }
