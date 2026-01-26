@@ -3,7 +3,7 @@ const area_grid = document.querySelectorAll(".grid-square");
 let alturas = new Array(area_grid.length).fill(0);
 
 const altura1 = [29,38,39,47,48,49,56,57,58,65,66,67,74,75,76];
-const altura2 = [59,68,69,77,78,79];
+const altura2 = [1,2,3,59,60,61,68,69,70,71,77,78,79];
 const comida = [12,22,45,54,72];
 for(const i of altura1){
     alturas[i] = 1;
