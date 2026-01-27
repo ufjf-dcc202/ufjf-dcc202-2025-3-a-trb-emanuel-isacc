@@ -141,12 +141,12 @@ function andarEsquerda(){
     }
 }
 
-function interagir(){
+async function interagir(){
     const pos_atual = posicao.y * coluna + posicao.x;
     if(area_grid[pos_atual].classList.contains("comida")){
         area_grid[pos_atual].classList.remove("comida");
-
     }
+    await sleep(500);
 }
 
 function verDirecao(){
@@ -165,7 +165,7 @@ function verDirecao(){
     }
 }
 
-function andarDirecao(){
+async function andarDirecao(){
 
     if(direcao == 0){
         andarCima();
@@ -179,21 +179,23 @@ function andarDirecao(){
     if(direcao == 3){
         andarEsquerda();
     }
+    await sleep(500);
 }
 
-    function virarDireita(){
+    async function virarDireita(){
         direcao++;
         direcao = direcao%4;
         verDirecao();
-        
+        await sleep(500);
     }
-    function virarEsquerda(){
+    async function virarEsquerda(){
         direcao--;
         direcao = direcao%4;
         if(direcao < 0) direcao +=4;
         verDirecao();
+        await sleep(500);
     }   
-    function pular(){
+    async function pular(){
         let proxima_casa;
 
         if(direcao == 0){
@@ -228,6 +230,7 @@ function andarDirecao(){
             andarBoneco();
             }
        }
+       await sleep(500);
     }
 
 
@@ -276,7 +279,6 @@ async function go(){
 
 async function executarAcao(){
     for (let i = 0; i < filadamain.length; i++) {
-        if(filadamain[i] != executarF1 && filadamain[i] != executarF2) await sleep(500);
         if (estado_jogo == 2) return;
         await filadamain[i]();
     }
@@ -284,7 +286,6 @@ async function executarAcao(){
 
 async function executarF1(){
     for (let i = 0; i < filadaf1.length; i++) {
-        if(filadaf1[i] != executarF1 && filadaf1[i] != executarF2) await sleep(500);
         if (estado_jogo == 2) return;
         await filadaf1[i]();
     }
@@ -292,7 +293,6 @@ async function executarF1(){
 
 async function executarF2(){
     for (let i = 0; i < filadaf2.length; i++) {
-        if(filadaf2[i] != executarF1 && filadaf2[i] != executarF2) await sleep(500);
         if (estado_jogo == 2) return;
         await filadaf2[i]();
     }
