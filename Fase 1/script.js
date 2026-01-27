@@ -288,7 +288,7 @@ function sleep(tempo){
 async function go(){
     if (estado_jogo == 0) { // inicia execução
         estado_jogo = 1;
-        await executarAcao();
+        await executarMain();
         await sleep(1000);
         console.log("Execução encerrada.")
         posicionaBoneco();
@@ -300,7 +300,7 @@ async function go(){
     }
 }
 
-async function executarAcao(){
+async function executarMain(){
     for (let i = 0; i < filadamain.length; i++) {
         if (estado_jogo == 2) return;
         await filadamain[i]();
