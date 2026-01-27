@@ -140,11 +140,16 @@ function andarEsquerda(){
         }
     }
 }
+let pipocas = 0;
 
 async function interagir(){
     const pos_atual = posicao.y * coluna + posicao.x;
     if(area_grid[pos_atual].classList.contains("comida")){
         area_grid[pos_atual].classList.remove("comida");
+
+        pipocas++;
+        console.log("Pipocas coletadas:", pipocas);
+        verificaVitoria();
     }
     await sleep(500);
 }
@@ -258,6 +263,12 @@ function salvarAcao (comando, fila){
 
 
 // EXECUÇÃO DOS COMANDOS
+
+function verificaVitoria(){
+    if(pipocas == comida.length){
+        alert("Parabéns! Você coletou todas as pipocas!");
+    }
+}
 
 function sleep(tempo){
     return new Promise(resolve => setTimeout(resolve, tempo));
