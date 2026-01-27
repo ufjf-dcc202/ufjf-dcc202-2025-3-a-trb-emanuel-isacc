@@ -1,5 +1,9 @@
 
 const area_grid = document.querySelectorAll(".grid-square");
+const boneco = document.getElementById("boneco");
+
+
+
 let alturas = new Array(area_grid.length).fill(0);
 
 const altura1 = [29,38,39,47,48,49,56,57,58,65,66,67,74,75,76];
@@ -28,7 +32,6 @@ function posicionaBoneco(){
     };
     direcao = 0;
     const pos_atual = posicao.y * coluna + posicao.x;
-    const boneco = document.getElementById("boneco");
     area_grid[pos_atual].appendChild(boneco);
     verDirecao();
 }
@@ -95,7 +98,6 @@ function selecionaFuncao(nome_funcao){
 function andarBoneco(){
 const pos_atual = posicao.y * coluna + posicao.x;
     if(posicao.y < linha && posicao.x < coluna ){
-    const boneco = document.getElementById("boneco");
         area_grid[pos_atual].appendChild(boneco);
     }
 }
@@ -153,7 +155,6 @@ function interagir(){
 }
 
 function verDirecao(){
-    const boneco = document.getElementById("boneco");
 
     if(direcao == 0){
         boneco.style.backgroundImage = "url('assets/placeholder/cima.png')";
