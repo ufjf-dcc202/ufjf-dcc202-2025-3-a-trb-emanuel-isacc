@@ -294,6 +294,7 @@ async function go(){
         posicionaBoneco();
         posicionaComida();
         estado_jogo = 0;
+        pipocas = 0;
     } else if (estado_jogo == 1) { // encerra execução
         estado_jogo = 2;
     }
