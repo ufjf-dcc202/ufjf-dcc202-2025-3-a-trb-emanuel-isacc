@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DarkBot</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <main>
+        
+        <div id="grid-area">
+            <div id="grid">
+                <div class="grid-square"> 
+                    <div id="boneco"> </div>
+                </div>
+                <div class="grid-square"> </div>
+                <div class="grid-square"> </div>
+                <div class="grid-square"> </div>
+                <div class="grid-square"> </div>
+                <div class="grid-square"> </div>
+                <div class="grid-square"> </div>
+                <div class="grid-square"> </div>
+                <div class="grid-square"> </div>
+                <div class="grid-square"> </div>
+                <div class="grid-square"> </div>
+                <div class="grid-square"> </div>
+                <div class="grid-square"> </div>
+                <div class="grid-square"> </div>
+                <div class="grid-square"> </div>
+                <div class="grid-square"> </div>
+                <div class="grid-square"> </div>
+                <div class="grid-square"> </div>
+                <div class="grid-square"> </div>
+                <div class="grid-square"> </div>
+                <div class="grid-square"> </div>
+                <div class="grid-square"> </div>
+                <div class="grid-square"> </div>
+                <div class="grid-square"> </div>
+                <div class="grid-square"> </div>
+                <div class="grid-square"> </div>
+                <div class="grid-square"> </div>
+                <div class="grid-square"> </div>
+                <div class="grid-square"> </div>
+                <div class="grid-square"> </div>
+                <div class="grid-square"> </div>
+                <div class="grid-square"> </div>
+                <div class="grid-square"> </div>
+                <div class="grid-square"> </div>
+                <div class="grid-square"> </div>
+                <div class="grid-square"> </div>
+                <div class="grid-square"> </div>
+                <div class="grid-square"> </div>
+                <div class="grid-square"> </div>
+                <div class="grid-square"> </div>
+                <div class="grid-square"> </div>
+                <div class="grid-square"> </div>
+                <div class="grid-square"> </div>
+                <div class="grid-square"> </div>
+                <div class="grid-square"> </div>
+                <div class="grid-square"> </div>
+                <div class="grid-square"> </div>
+                <div class="grid-square"> </div>
+                <div class="grid-square"> </div>
+                <div class="grid-square"> </div>
+                <div class="grid-square"> </div>
+                <div class="grid-square"> </div>
+                <div class="grid-square"> </div>
+                <div class="grid-square"> </div>
+                <div class="grid-square"> </div>
+                <div class="grid-square"> </div>
+                <div class="grid-square"> </div>
+                <div class="grid-square"> </div>
+                <div class="grid-square"> </div>
+                <div class="grid-square"> </div>
+                <div class="grid-square"> </div>
+                <div class="grid-square"> </div>
+                <div class="grid-square"> </div>
+                <div class="grid-square"> </div>
+                <div class="grid-square"> </div>
+                <div class="grid-square"> </div>
+                <div class="grid-square"> </div>
+                <div class="grid-square"> </div>
+                <div class="grid-square"> </div>
+                <div class="grid-square"> </div>
+                <div class="grid-square"> </div>
+                <div class="grid-square"> </div>
+                <div class="grid-square"> </div>
+                <div class="grid-square"> </div>
+                <div class="grid-square"> </div>
+                <div class="grid-square"> </div>
+                <div class="grid-square"> </div>
+                <div class="grid-square"> </div>
+                <div class="grid-square"> </div>
+                <div class="grid-square"> </div>
+            </div>
+        </div>
+        
+        
+        
+        <div id="hud">
+            <div id="button-area">
+                <button class="button" id="andar" onclick="SalvareColocar(andarDirecao, 1)"></button>
+                <button class="button" id="direita" onclick="SalvareColocar(virarDireita, 2)"></button>
+                <button class="button" id="esquerda"onclick="SalvareColocar(virarEsquerda, 3)"></button>
+                <button class="button" id="pular" onclick="SalvareColocar(pular, 4)"></button>
+                <button class="button" id="interagir" onclick="SalvareColocar(interagir, 5)"></button>
+                <button class="button" id="botao-f1" onclick="SalvareColocar(executarF1, 6)"></button>
+                <button class="button" id="botao-f2" onclick="SalvareColocar(executarF2, 7)"></button>
+                <button class="button" id="go" onclick="go()"></button>
+            </div>
+            <div id="function-area">
+                <div class = "funcao" id="fmain">
+                    <div class="comando-main"></div>
+                    <div class="comando-main"></div>
+                    <div class="comando-main"></div>
+                    <div class="comando-main"></div>
+                    <div class="comando-main"></div>
+                    <div class="comando-main"></div>
+                    <div class="comando-main"></div>
+                    <div class="comando-main"></div>
+                    <div class="comando-main"></div>
+                    <div class="comando-main"></div>
+                    <div class="comando-main"></div>
+                    <div class="comando-main"></div>
+                </div>
+                <div class = "funcao" id="f1">
+                    <div class="comando-f1"></div>
+                    <div class="comando-f1"></div>
+                    <div class="comando-f1"></div>
+                    <div class="comando-f1"></div>
+                    <div class="comando-f1"></div>
+                    <div class="comando-f1"></div>
+                    <div class="comando-f1"></div>
+                    <div class="comando-f1"></div>
+                </div>
+                <div class = "funcao" id="f2">
+                    <div class="comando-f2"></div>
+                    <div class="comando-f2"></div>
+                    <div class="comando-f2"></div>
+                    <div class="comando-f2"></div>
+                    <div class="comando-f2"></div>
+                    <div class="comando-f2"></div>
+                    <div class="comando-f2"></div>
+                    <div class="comando-f2"></div>
+                </div>
+            </div>
+
+        </div>
+        
+        
+       
+        
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>
