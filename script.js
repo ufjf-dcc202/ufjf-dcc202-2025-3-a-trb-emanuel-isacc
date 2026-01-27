@@ -142,16 +142,6 @@ function andarEsquerda(){
     }
 }
 
-async function interagir(){
-    const pos_atual = posicao.y * coluna + posicao.x;
-    if(area_grid[pos_atual].classList.contains("comida")){
-        area_grid[pos_atual].classList.remove("comida");
-        pipocas++;
-        console.log("Pipocas coletadas:", pipocas);
-        verificaVitoria();
-    }
-    await sleep(500);
-}
 
 function verDirecao(){
     const url_direcao = [
@@ -225,10 +215,13 @@ async function andarDirecao(){
        await sleep(500);
     }
 
-    async function interagir(){
+async function interagir(){
     const pos_atual = posicao.y * coluna + posicao.x;
     if(area_grid[pos_atual].classList.contains("comida")){
         area_grid[pos_atual].classList.remove("comida");
+        pipocas++;
+        console.log("Pipocas coletadas:", pipocas);
+        verificaVitoria();
     }
     await sleep(500);
 }
