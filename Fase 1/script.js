@@ -1,6 +1,9 @@
 
 const area_grid = document.querySelectorAll(".grid-square");
 const boneco = document.getElementById("boneco");
+const grid_main = document.querySelectorAll(".comando-main");
+const grid_f1 = document.querySelectorAll(".comando-f1");
+const grid_f2 = document.querySelectorAll(".comando-f2");
 
 let posicao;
 let direcao;
@@ -72,6 +75,16 @@ window.onload = () => {
 fmain.addEventListener("click", () => selecionaFuncao(0));
 f1.addEventListener("click", () => selecionaFuncao(1));
 f2.addEventListener("click", () => selecionaFuncao(2));
+
+grid_main.forEach(quadrado => {
+    quadrado.addEventListener("click", () => removeComando(filadamain, grid_main, quadrado))
+})
+grid_f1.forEach(quadrado => {
+    quadrado.addEventListener("click", () => removeComando(filadaf1, grid_f1, quadrado))
+})
+grid_f2.forEach(quadrado => {
+    quadrado.addEventListener("click", () => removeComando(filadaf2, grid_f2, quadrado))
+})
 
 function selecionaFuncao(nome_funcao){
     fmain.style.backgroundColor = "";
@@ -243,6 +256,16 @@ function colocaImagem(qual, fila, grid_funcao){
     grid_funcao[index].style.backgroundImage = url_botoes[qual];
 }
 
+function removeComando(fila, grid_funcao, quadrado){
+    const index = fila.length - 1;
+    let grid_array = Array.from(grid_funcao);
+
+    if (grid_array.indexOf(quadrado) == index){
+        grid_array[index].style.backgroundImage = "none";
+        fila.pop();
+    }
+}
+
 
 function salvarAcao (comando, fila){
     fila.push(comando);
@@ -265,18 +288,19 @@ function sleep(tempo){
 async function go(){
     if (estado_jogo == 0) { // inicia execução
         estado_jogo = 1;
-        await executarAcao();
+        await executarMain();
         await sleep(1000);
         console.log("Execução encerrada.")
         posicionaBoneco();
         posicionaComida();
         estado_jogo = 0;
+        pipocas = 0;
     } else if (estado_jogo == 1) { // encerra execução
         estado_jogo = 2;
     }
 }
 
-async function executarAcao(){
+async function executarMain(){
     for (let i = 0; i < filadamain.length; i++) {
         if (estado_jogo == 2) return;
         await filadamain[i]();
