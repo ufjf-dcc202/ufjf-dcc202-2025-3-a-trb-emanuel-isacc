@@ -141,14 +141,6 @@ function andarEsquerda(){
     }
 }
 
-async function interagir(){
-    const pos_atual = posicao.y * coluna + posicao.x;
-    if(area_grid[pos_atual].classList.contains("comida")){
-        area_grid[pos_atual].classList.remove("comida");
-    }
-    await sleep(500);
-}
-
 function verDirecao(){
     const url_direcao = [
         "url('assets/placeholder/cima.png')",
@@ -158,6 +150,9 @@ function verDirecao(){
     ];
     boneco.style.backgroundImage = url_direcao[direcao];
 }
+
+
+// COMANDOS
 
 async function andarDirecao(){
     if(direcao == 0) andarCima();
@@ -217,6 +212,14 @@ async function andarDirecao(){
        }
        await sleep(500);
     }
+
+    async function interagir(){
+    const pos_atual = posicao.y * coluna + posicao.x;
+    if(area_grid[pos_atual].classList.contains("comida")){
+        area_grid[pos_atual].classList.remove("comida");
+    }
+    await sleep(500);
+}
 
 
 function colocaImagem(qual, fila, grid_funcao){
