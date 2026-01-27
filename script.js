@@ -4,7 +4,7 @@ const boneco = document.getElementById("boneco");
 
 let posicao;
 let direcao;
-let pipoca = 0;
+let pipocas = 0;
 
 // LEVEL DESIGN
 let alturas = new Array(area_grid.length).fill(0);
