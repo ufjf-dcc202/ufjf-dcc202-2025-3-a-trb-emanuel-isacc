@@ -2,22 +2,24 @@
 const area_grid = document.querySelectorAll(".grid-square");
 const boneco = document.getElementById("boneco");
 
+let posicao;
+let direcao;
 
-
+// LEVEL DESIGN
 let alturas = new Array(area_grid.length).fill(0);
 
 const altura1 = [29,38,39,47,48,49,56,57,58,65,66,67,74,75,76];
 const altura2 = [1,2,3,59,60,61,68,69,70,71,77,78,79];
 const comida = [12,22,45,54,72];
+
 for(const i of altura1){
     alturas[i] = 1;
+    area_grid[i].classList.add("altura1");
 }
 for(const i of altura2){
     alturas[i] = 2;
+    area_grid[i].classList.add("altura2");
 }
-
-let posicao;
-let direcao;
 
 function posicionaComida(){
     for (const i of comida){
@@ -43,14 +45,7 @@ let estado_jogo = 0;
 //2 -> executando, mas deve parar
 
 
-alturas.forEach((valor,index) => {
-    if(valor == 1){
-        area_grid[index].classList.add("ativo1");
-    }
-    else if(valor == 2){
-        area_grid[index].classList.add("ativo2");
-    }
-});
+
 
 const coluna = 10;
 const linha = 8;

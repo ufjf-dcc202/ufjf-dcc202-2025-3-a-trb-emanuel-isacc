@@ -150,10 +150,10 @@ main{
     display:flex;
     gap: 5px;
 }
-.ativo1{
+.altura1{
     background-color: darkblue;
 }
-.ativo2{
+.altura2{
     background-color: darkred;
 }
 .comida{
