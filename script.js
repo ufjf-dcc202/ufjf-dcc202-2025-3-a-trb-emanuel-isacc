@@ -150,35 +150,20 @@ async function interagir(){
 }
 
 function verDirecao(){
-
-    if(direcao == 0){
-        boneco.style.backgroundImage = "url('assets/placeholder/cima.png')";
-    }
-    if(direcao == 1){
-        boneco.style.backgroundImage = "url('assets/placeholder/direita.png')";
-    }
-    if(direcao == 2){
-        boneco.style.backgroundImage = "url('assets/placeholder/baixo.png')";
-    }
-    if(direcao == 3){
-        boneco.style.backgroundImage = "url('assets/placeholder/esquerda.png')";
-    }
+    const url_direcao = [
+        "url('assets/placeholder/cima.png')",
+        "url('assets/placeholder/direita.png')",
+        "url('assets/placeholder/baixo.png')",
+        "url('assets/placeholder/esquerda.png')"
+    ];
+    boneco.style.backgroundImage = url_direcao[direcao];
 }
 
 async function andarDirecao(){
-
-    if(direcao == 0){
-        andarCima();
-    }
-    if(direcao == 1){
-        andarDireita();
-    }
-    if(direcao == 2){
-        andarBaixo();
-    }
-    if(direcao == 3){
-        andarEsquerda();
-    }
+    if(direcao == 0) andarCima();
+    if(direcao == 1) andarDireita();
+    if(direcao == 2) andarBaixo();
+    if(direcao == 3) andarEsquerda();
     await sleep(500);
 }
 
