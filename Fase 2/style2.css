@@ -76,7 +76,7 @@ main{
     grid-template-columns: repeat(10, 10%);
     grid-template-rows: repeat(8, 12.5%);
     justify-content: center;
-    background-image: url('./assets/placeholder_background.png');
+    background-image: url('../assets/placeholder_background.png');
     aspect-ratio: 10/8;
     width: 90%;
     height: auto;
@@ -112,28 +112,28 @@ main{
     box-shadow: 0 0 6px rgb(89, 89, 89);
 }
 #andar{
-    background-image: url("./assets/botoes/frente.jpeg");
+    background-image: url("../assets/botoes/frente.jpeg");
 }
 #direita{
-    background-image: url("./assets/botoes/direita.jpeg");
+    background-image: url("../assets/botoes/direita.jpeg");
 }
 #esquerda{
-    background-image: url("./assets/botoes/esquerda.jpeg");
+    background-image: url("../assets/botoes/esquerda.jpeg");
 }
 #pular{
-    background-image: url("./assets/botoes/pular.jpeg");
+    background-image: url("../assets/botoes/pular.jpeg");
 }
 #interagir{
-    background-image: url("./assets/botoes/interagir.jpeg");
+    background-image: url("../assets/botoes/interagir.jpeg");
 }
 #botao-f1{
-    background-image: url("./assets/botoes/f1.jpeg");
+    background-image: url("../assets/botoes/f1.jpeg");
 }
 #botao-f2{
-    background-image: url("./assets/botoes/f2.jpeg");
+    background-image: url("../assets/botoes/f2.jpeg");
 }
 #go{
-    background-image: url("./assets/botoes/go.jpeg");
+    background-image: url("../assets/botoes/go.jpeg");
 }
 #boneco{
     background-color: blue;
@@ -141,7 +141,7 @@ main{
     flex:1;
     justify-content: center;
     align-items: center;
-    background-image: url('./assets/placeholder/cima.png');
+    background-image: url('../assets/placeholder/cima.png');
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
@@ -157,7 +157,7 @@ main{
     background-color: darkred;
 }
 .comida{
-    background-image: url('./assets/pipoca.png');
+    background-image: url('../assets/pipoca.png');
     background-size: 50%;
     background-repeat: no-repeat;
     background-position: center;

@@ -145,10 +145,10 @@ function andarEsquerda(){
 
 function verDirecao(){
     const url_direcao = [
-        "url('assets/placeholder/cima.png')",
-        "url('assets/placeholder/direita.png')",
-        "url('assets/placeholder/baixo.png')",
-        "url('assets/placeholder/esquerda.png')"
+        "url('../assets/placeholder/cima.png')",
+        "url('../assets/placeholder/direita.png')",
+        "url('../assets/placeholder/baixo.png')",
+        "url('../assets/placeholder/esquerda.png')"
     ];
     boneco.style.backgroundImage = url_direcao[direcao];
 }
@@ -231,13 +231,13 @@ function colocaImagem(qual, fila, grid_funcao){
     
     const index = fila.length - 1;
     const url_botoes = ["",
-        "url('assets/botoes/frente.jpeg')",
-        "url('assets/botoes/direita.jpeg')",
-        "url('assets/botoes/esquerda.jpeg')",
-        "url('assets/botoes/pular.jpeg')",
-        "url('assets/botoes/interagir.jpeg')",
-        "url('assets/botoes/f1.jpeg')",
-        "url('assets/botoes/f2.jpeg')"
+        "url('../assets/botoes/frente.jpeg')",
+        "url('../assets/botoes/direita.jpeg')",
+        "url('../assets/botoes/esquerda.jpeg')",
+        "url('../assets/botoes/pular.jpeg')",
+        "url('../assets/botoes/interagir.jpeg')",
+        "url('../assets/botoes/f1.jpeg')",
+        "url('../assets/botoes/f2.jpeg')"
     ];
                 
     grid_funcao[index].style.backgroundImage = url_botoes[qual];
