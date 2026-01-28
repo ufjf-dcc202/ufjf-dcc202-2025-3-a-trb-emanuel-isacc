@@ -9,13 +9,7 @@ let posicao;
 let direcao;
 let pipocas = 0;
 
-// LEVEL DESIGN----------------------------------------------------------------------------//
 let alturas = new Array(area_grid.length).fill(0);
-
-const altura1 = [];
-const altura2 = [10,12,14,16,18, 31,33,35,37,39, 50,52,54,56,58];
-const comida = [20,24,28, 42, 46, 49];
-//-----------------------------------------------------------------------------------------//
 
 for(const i of altura1){
     alturas[i] = 1;
@@ -34,10 +28,10 @@ function posicionaComida(){
 function posicionaBoneco(){
     posicao = {
         x : 1,
-        y : 0,
+        y : 1,
         z : 0
     };
-    direcao = 2;
+    direcao = 1;
     const pos_atual = posicao.y * coluna + posicao.x;
     area_grid[pos_atual].appendChild(boneco);
     verDirecao();
@@ -157,7 +151,15 @@ function andarEsquerda(){
 }
 
 
-
+function verDirecao(){
+    const url_direcao = [
+        `url('${caminho_skin}/cima.png')`,
+        `url('${caminho_skin}/direita.png')`,
+        `url('${caminho_skin}/baixo.png')`,
+        `url('${caminho_skin}/esquerda.png')`
+    ];
+    boneco.style.backgroundImage = url_direcao[direcao];
+}
 
 
 // COMANDOS
@@ -271,6 +273,7 @@ function salvarAcao (comando, fila){
 function verificaVitoria(){
     if(pipocas == comida.length){
         alert("Parabéns! Você coletou todas as pipocas!");
+        window.location.href = "../Fase 2/main2.html";
     }
 }
 
