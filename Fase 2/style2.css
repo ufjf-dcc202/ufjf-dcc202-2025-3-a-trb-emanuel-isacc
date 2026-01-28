@@ -136,7 +136,6 @@ main{
     background-image: url("../assets/botoes/go.jpeg");
 }
 #boneco{
-    background-color: blue;
     display:flex;
     flex:1;
     justify-content: center;
