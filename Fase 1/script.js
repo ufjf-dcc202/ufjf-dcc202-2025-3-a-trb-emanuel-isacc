@@ -12,7 +12,7 @@ let pipocas = 0;
 // LEVEL DESIGN----------------------------------------------------------------------------//
 let alturas = new Array(area_grid.length).fill(0);
 
-const altura1 = [29,38,39,47,48,49,56,57,58,65,66,67,74,75,76];
+const altura1 = [29,32, 52,38,39,47,48,49,56,57,58,65,66,67,74,75,76];
 const altura2 = [1,2,3,59,60,61,68,69,70,71,77,78,79];
 const comida = [12,22,45,54,72];
 //-----------------------------------------------------------------------------------------//
@@ -33,11 +33,11 @@ function posicionaComida(){
 }
 function posicionaBoneco(){
     posicao = {
-        x : 3,
-        y : 2,
+        x : 1,
+        y : 1,
         z : 0
     };
-    direcao = 0;
+    direcao = 1;
     const pos_atual = posicao.y * coluna + posicao.x;
     area_grid[pos_atual].appendChild(boneco);
     verDirecao();

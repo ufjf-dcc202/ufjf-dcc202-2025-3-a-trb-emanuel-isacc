@@ -87,7 +87,8 @@ main{
     grid-template-columns: repeat(10, 10%);
     grid-template-rows: repeat(8, 12.5%);
     justify-content: center;
-    background-image: url('../assets/placeholder_background.png');
+    background-image: url('../assets/mapa1.jpeg');
+    background-size: cover;
     aspect-ratio: 10/8;
     width: 90%;
     height: auto;
@@ -162,9 +163,11 @@ main{
 }
 .altura1{
     background-color: darkblue;
+    opacity: 0.35;
 }
 .altura2{
     background-color: darkred;
+    opacity: 0.35;
 }
 .comida{
     background-image: url('../assets/pipoca.png');
