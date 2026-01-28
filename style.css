@@ -1,9 +1,14 @@
+body{
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
 main{
     display: flex;
     border: 1px solid black;
-    height: 97vh;
-    width: 98vw;
-
+    height: 99.8vh;
+    width: 99.9vw;
+    margin: 0;
 }
 #botao-reset{
     display: flex;
@@ -11,8 +16,8 @@ main{
     aspect-ratio: 1;
     height: 7%;
     width: auto;
-    top: 2vh;
-    left: 2vh;
+    top: 1vh;
+    left: 1vh;
     filter: drop-shadow(0 0 2px rgba(89, 89, 89, 0.7));
     background-image: url("./assets/botoes/reset.jpeg");
     background-size: contain;
@@ -60,7 +65,7 @@ main{
 }
 
 .comando-main, .comando-f1, .comando-f2{
-    width: 6vw;
+    width: 5.8vw;
     aspect-ratio: 1;
     background-size:contain;
     border-radius: 25%;
@@ -79,7 +84,6 @@ main{
     width: 60%;
     justify-content: center;
     align-items: center;
-    padding: 2%;
     overflow: auto;
 }
 #grid{
@@ -92,7 +96,7 @@ main{
     background-image: url('./assets/mapa1.jpeg');
     background-size: cover;
     aspect-ratio: 10/8;
-    width: 90%;
+    width: 86%;
     height: auto;
 
 
@@ -124,7 +128,7 @@ main{
     aspect-ratio: 1/1;
     background-size: cover;
     box-shadow: 0 0 6px rgb(89, 89, 89);
-    margin: 7%;
+    margin: 4.5%;
 }
 #andar{
     background-image: url("./assets/botoes/frente.jpeg");
