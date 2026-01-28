@@ -35,7 +35,7 @@ main{
     width: 28vw;
     justify-content: space-around;
     align-items: center;
-    overflow: scroll;
+    overflow: auto;
 }
 .funcao{
     display: grid;
@@ -81,7 +81,7 @@ main{
     align-items: center;
     overflow:hidden;
     padding: 2%;
-    overflow: scroll;
+    overflow: auto;
 }
 #grid{
     border: 1px solid black;
