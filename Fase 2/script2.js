@@ -157,15 +157,6 @@ function andarEsquerda(){
 }
 
 
-function verDirecao(){
-    const url_direcao = [
-        "url('../assets/placeholder/cima.png')",
-        "url('../assets/placeholder/direita.png')",
-        "url('../assets/placeholder/baixo.png')",
-        "url('../assets/placeholder/esquerda.png')"
-    ];
-    boneco.style.backgroundImage = url_direcao[direcao];
-}
 
 
 // COMANDOS
