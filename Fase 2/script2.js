@@ -33,8 +33,8 @@ function posicionaComida(){
 }
 function posicionaBoneco(){
     posicao = {
-        x : 1,
-        y : 1,
+        x : 2,
+        y : 0,
         z : 0
     };
     direcao = 1;
