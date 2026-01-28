@@ -5,6 +5,20 @@ main{
     width: 98vw;
 
 }
+#botao-reset{
+    display: flex;
+    position: absolute;
+    aspect-ratio: 1;
+    height: 7%;
+    width: auto;
+    top: 2vh;
+    left: 2vh;
+    filter: drop-shadow(0 0 2px rgba(89, 89, 89, 0.7));
+    background-image: url("../assets/botoes/reset.jpeg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    border-radius: 30%;
+}
 #hud{
     display: flex;
     flex-direction: row;
