@@ -38,11 +38,11 @@ function posicionaComida(){
 }
 function posicionaBoneco(){
     posicao = {
-        x : 1,
-        y : 1,
-        z : 0
+        x : posicao_inicial.x,
+        y : posicao_inicial.y,
+        z : posicao_inicial.z
     };
-    direcao = 1;
+    direcao = direcao_inicial;
     const pos_atual = posicao.y * coluna + posicao.x;
     area_grid[pos_atual].appendChild(boneco);
     verDirecao();
