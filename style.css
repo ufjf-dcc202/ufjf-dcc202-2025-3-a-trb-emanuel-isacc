@@ -65,10 +65,10 @@ main{
 }
 
 .comando-main, .comando-f1, .comando-f2{
-    width: 5.8vw;
+    width: 5.9vw;
     aspect-ratio: 1;
     background-size:contain;
-    border-radius: 25%;
+    border-radius: 30%;
     margin: 1%;
 }
 
@@ -128,7 +128,7 @@ main{
     aspect-ratio: 1/1;
     background-size: cover;
     box-shadow: 0 0 6px rgb(89, 89, 89);
-    margin: 4.5%;
+    margin:6%;
 }
 #andar{
     background-image: url("./assets/botoes/frente.jpeg");
