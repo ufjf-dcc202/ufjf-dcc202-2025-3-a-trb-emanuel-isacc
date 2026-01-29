@@ -273,7 +273,7 @@ function salvarAcao (comando, fila){
 function verificaVitoria(){
     if(pipocas == comida.length){
         alert("Parabéns! Você coletou todas as pipocas!");
-        window.location.href = "../Fase 2/main2.html";
+        window.location.href = proximo_link;
     }
 }
 
