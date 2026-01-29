@@ -9,6 +9,17 @@ let posicao;
 let direcao;
 let pipocas = 0;
 
+const coluna = 10;
+const linha = 8;
+
+
+let estado_jogo = 0;
+//0 -> parado
+//1 -> executando
+//2 -> executando, mas deve parar
+
+
+
 let alturas = new Array(area_grid.length).fill(0);
 
 for(const i of altura1){
@@ -38,20 +49,9 @@ function posicionaBoneco(){
 }
 
 
-let estado_jogo = 0;
-//0 -> parado
-//1 -> executando
-//2 -> executando, mas deve parar
-
-
-
-
-const coluna = 10;
-const linha = 8;
-
-filadamain = [];
-filadaf1 = [];
-filadaf2 = [];
+let filadamain = [];
+let filadaf1 = [];
+let filadaf2 = [];
 
 const fmain = document.getElementById("fmain");
 const f1 = document.getElementById("f1");
@@ -191,36 +191,36 @@ async function andarDirecao(){
         if(direcao == 0){
             proxima_casa = (posicao.y-1) * coluna + posicao.x;
             if(Math.abs(alturas[proxima_casa] - posicao.z) == 1){ 
-            posicao.z = alturas[proxima_casa];
-            posicao.y--;
-            andarBoneco();
+                posicao.z = alturas[proxima_casa];
+                posicao.y--;
+                andarBoneco();
             }
         }
         if(direcao == 1){
             proxima_casa = posicao.y * coluna + (posicao.x +1);
             if(Math.abs(alturas[proxima_casa] - posicao.z) == 1){
-            posicao.z = alturas[proxima_casa];
-            posicao.x++;
-            andarBoneco();
+                posicao.z = alturas[proxima_casa];
+                posicao.x++;
+                andarBoneco();
             }
         }
         if(direcao == 2){
             proxima_casa = (posicao.y +1) * coluna + posicao.x;
             if(Math.abs(alturas[proxima_casa] - posicao.z) == 1){
-            posicao.z = alturas[proxima_casa];
-            posicao.y++;
-            andarBoneco();
+                posicao.z = alturas[proxima_casa];
+                posicao.y++;
+                andarBoneco();
             }
         }
         if(direcao == 3){
             proxima_casa = posicao.y * coluna + (posicao.x -1);
             if(Math.abs(alturas[proxima_casa] - posicao.z) == 1){
-            posicao.z = alturas[proxima_casa];
-            posicao.x--;
-            andarBoneco();
+                posicao.z = alturas[proxima_casa];
+                posicao.x--;
+                andarBoneco();
             }
-       }
-       await sleep(500);
+        }
+        await sleep(500);
     }
 
 async function interagir(){
@@ -235,7 +235,7 @@ async function interagir(){
 }
 
 
-function colocaImagem(qual, fila, grid_funcao){
+function colocaImagem(num_botao, fila, grid_funcao){
     
     const index = fila.length - 1;
     const url_botoes = ["",
@@ -248,7 +248,7 @@ function colocaImagem(qual, fila, grid_funcao){
         "url('../assets/botoes/f2.jpeg')"
     ];
                 
-    grid_funcao[index].style.backgroundImage = url_botoes[qual];
+    grid_funcao[index].style.backgroundImage = url_botoes[num_botao];
 }
 
 function removeComando(fila, grid_funcao, quadrado){
@@ -317,7 +317,7 @@ async function executarF2(){
     }
 }
 
-function SalvareColocar(comando, qual){
+function SalvareColocar(comando, num_botao){
 
     console.log(funcao_selecionada);
     let fila;
@@ -336,7 +336,7 @@ function SalvareColocar(comando, qual){
 
     if(fila.length < grid_funcao.length){
         salvarAcao(comando, fila);
-        colocaImagem(qual, fila, grid_funcao);
+        colocaImagem(num_botao, fila, grid_funcao);
     } else {
         alert("Limite de ações atingido.");
     }
